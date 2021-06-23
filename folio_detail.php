@@ -2,15 +2,15 @@
 require_once './system/PortfolioController.php';
 require_once './system/PageController.php';
 
-$page=new PageController();
-$page_detail=$page->getWhereData('page_detail',['page'=>'portfolio_detail'],[],true);
+$page = new PageController();
+$page_detail = $page->getWhereData('page_detail', ['page' => 'portfolio_detail'], [], true);
 
 
-$port=new PortfolioController();
+$port = new PortfolioController();
 
-$reuslt=null;
-if(isset($_GET['id'])&&$_GET['id']>0){
-    $reuslt=$port->getData('portfolio',null,$_GET['id']);
+$reuslt = null;
+if (isset($_GET['id']) && $_GET['id'] > 0) {
+    $reuslt = $port->getData('portfolio', null, $_GET['id']);
 }
 ?>
 
@@ -56,7 +56,7 @@ if(isset($_GET['id'])&&$_GET['id']>0){
             </div>
             <div class="small-text">
                 <p>
-                <?= isset($page_detail->description)?$page_detail->description: '' ?>
+                    <?= isset($page_detail->description) ? $page_detail->description : '' ?>
                 </p>
             </div>
             <div class="right-line">
@@ -64,48 +64,48 @@ if(isset($_GET['id'])&&$_GET['id']>0){
         </div>
 
         <?php
-        if(isset($reuslt)){
+        if (isset($reuslt)) {
         ?>
-        <div class="folio-detailslow">
-            <div class="folio-imagedetails">
-                <img src="./images/portfolio/<?= $reuslt->image ?>" alt="" class="src">
+            <div class="folio-detailslow">
+                <div class="folio-imagedetails">
+                    <img src="./images/portfolio/<?= $reuslt->image ?>" alt="" class="src">
+
+                </div>
+                <div class="foliodetails-content">
+                    <ul class="list">
+                        <li class="caps">
+                            <?= $reuslt->project_title ?>
+                        </li>
+                        <li>
+                            Project: <span class="list-left"><?= $reuslt->project_name ?></span>
+                        </li>
+                        <li>
+                            client:<span class="list-left"><?= $reuslt->client; ?></span>
+                        </li>
+                        <li>
+                            duration:<span class="list-left"> <?= $reuslt->duration ?></span>
+                        </li>
+                        </li>
+                        <li>
+                            technology:<span class="list-left"> PHP</span>
+                        </li>
+                        <li>
+                            Budget:<span class="list-left"><?= $reuslt->budget ?></span>
+                        </li>
+                    </ul>
+
+
+                </div>
 
             </div>
-            <div class="foliodetails-content">
-                <ul class="list">
-                    <li class="caps">
-                        <?=$reuslt->project_title?>
-                    </li>
-                    <li>
-                        Project: <span class="list-left"><?= $reuslt->project_name?></span>
-                    </li>
-                    <li>
-                        client:<span class="list-left"><?= $reuslt->client;?></span>
-                    </li>
-                    <li>
-                        duration:<span class="list-left"> <?= $reuslt->duration?></span>
-                    </li>
-                    </li>
-                    <li>
-                        technology:<span class="list-left"> PHP</span>
-                    </li>
-                    <li>
-                        Budget:<span class="list-left"><?= $reuslt->budget?></span>
-                    </li>
-                </ul>
-
+            <div class="foliopreview-button">
+                <button href="" class="preview-btn" onclick="show_modal()">
+                    Preview
+                </button>
 
             </div>
 
-        </div>
-        <div class="foliopreview-button">
-            <button href="" class="preview-btn" onclick="show_modal()">
-                Preview
-            </button>
 
-        </div>
-
-        
     </section>
     <section id="preview-page">
         <div class="overlay">
@@ -118,20 +118,20 @@ if(isset($_GET['id'])&&$_GET['id']>0){
         </div>
     </section>
 
-    <?php
+<?php
         }
-        ?>
-    <script>
-        function show_modal() {
-            document.getElementsByClassName('overlay-box')[0].style.display = "block";
-            document.getElementsByClassName('overlay')[0].style.display = "block";
-        }
+?>
+<script>
+    function show_modal() {
+        document.getElementsByClassName('overlay-box')[0].style.display = "block";
+        document.getElementsByClassName('overlay')[0].style.display = "block";
+    }
 
-        function hide_modal() {
-            document.getElementsByClassName('overlay-box')[0].style.display = "none";
-            document.getElementsByClassName('overlay')[0].style.display = "none";
-        }
-    </script>
+    function hide_modal() {
+        document.getElementsByClassName('overlay-box')[0].style.display = "none";
+        document.getElementsByClassName('overlay')[0].style.display = "none";
+    }
+</script>
 </body>
 
 </html>
