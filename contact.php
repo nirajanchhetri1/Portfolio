@@ -64,28 +64,42 @@
     <div class="contact-lower">
         <div class="contact-details">
             <ul>
-                <li>
-                    <p>Phone</p>
-                    <i class="fab fa-facebook-f" style="font-size:13px; color:orange;"></i>i
-                    9846562256
-                </li>
+                
+
                 <li>
                     <p>Email</p>
-                    <i class="fab fa-facebook-f" style="font-size:13px; color:orange;"></i>i
-                    9846562256
+                    <!-- <i class="fab fa-facebook-f" style="font-size:13px; color:orange;"></i>i -->
+                    <i class="fas fa-envelope"></i>
+                    sabh@gmail.com
                 </li>
                 <li>
                     <p>Instagram</p>
-                    <i class="fab fa-facebook-f" style="font-size:13px; color:orange;"></i>i
-                    9846562256
+                    <!-- <i class="fab fa-facebook-f" style="font-size:13px; color:orange;"></i>i -->
+                    <i class="fab fa-instagram"></i>
+                    sabitabhattarai
                 </li>
                 <li>
                     <p>Linkedin</p>
-                    <i class="fab fa-facebook-f" style="font-size:13px; color:orange;"></i>i
-                    9846562256
+                    <!-- <i class="fab fa-facebook-f" style="font-size:13px; color:orange;"></i>i -->
+                    <i class="fab fa-linkedin-in"></i>
+                    Sabita Bhattarai 
+                </li>
+                <!-- <li>
+            <p>Phone</p>
+                    <!-- <i class="fab fa-facebook-f" style="font-size:13px; color:orange;"></i>i -->
+                    <!-- <i class="fas fa-phone"></i> -->
+                    <!-- 9846562256
+                </li> --> -->
+
+                <li>
+                <p>Twitter </p>
+                <i class="fab fa-twitter"></i>
+                sabitabhattrrai
+
                 </li>
                 <div class="follow" style="width: fit-content; margin-top: 12px;">
-
+                <li>
+                   
                     Follow Me
                     <div class="social-icons">
                         <a href=""><i class="fab fa-facebook-f my" style="font-size:13px;"></i></a>

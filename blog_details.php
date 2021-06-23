@@ -67,7 +67,9 @@ if(isset($_GET['id'])&&$_GET['id']>0){
         <div class="info-list">
             <ul>
                 <li>
-                    <i class="fab fa-facebook-f" style="font-size:13px; color:orange;"></i>
+                    
+                    <i class="fas fa-calendar-alt" style="font-size:13px; color:orange;"></i>
+
                     <?= isset($blog->created_at)? date('d F Y'):''?>
                 </li>
             </ul>
