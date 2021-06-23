@@ -52,6 +52,34 @@ if(isset($_GET['id'])&&$_GET['id']>0){
             </td>
         </tr>
         <tr>
+            <td>Contact</td>
+            <td><input type="number" name="contact" id="contact" value="<?= isset($selectedData)? $selectedData->contact:''?>"/></td>
+        </tr>
+       
+        <tr>
+            <td>Email</td>
+            <td><input type="email" name="email" id="email" value="<?= isset($selectedData)? $selectedData->email:''?>"/></td>
+        </tr>
+        
+        <tr>
+            <td>Facebook</td>
+            <td><input type="text" name="facebook" id="facebook" value="<?= isset($selectedData)? $selectedData->facebook:''?>"/></td>
+        </tr>
+
+        <tr>
+            <td>Instagram</td>
+            <td><input type="text" name="instagram" id="instagram" value="<?= isset($selectedData)? $selectedData->instagram:''?>"/></td>
+        </tr>
+
+        <tr>
+            <td>Linkedin</td>
+            <td><input type="text" name="linkedin" id="linkedin" value="<?= isset($selectedData)? $selectedData->linkedin:''?>"/></td>
+        </tr>
+        <tr>
+            <td>Twitter</td>
+            <td><input type="text" name="twitter" id="twitter" value="<?= isset($selectedData)? $selectedData->twitter:''?>"/></td>
+        </tr>
+        <tr>
             <td>Image</td>
             <td>
                 <input type="file" name="image" id="image">

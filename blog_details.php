@@ -1,3 +1,11 @@
+<?php
+require_once 'system/BlogController.php';
+
+if(isset($_GET['id'])&&$_GET['id']>0){
+    $blogc=new BlogController();
+    $blog=$blogc->getWhereData('blogs',['id'=>$_GET['id']],[],true);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,9 +54,12 @@
             My &nbsp;<span class="orange-text">blogs</span>
         </p>
     </div>
+    <?php
+    if(isset($blog)){
+    ?>
 
     <div class="blog-detailimg">
-        <img src="./images/blog.jpg" alt="" class="src">
+        <img src="./images/blogs/<?= $blog->image?>" alt="" class="src">
 
         <div class="black-overlay">
 
@@ -57,7 +68,7 @@
             <ul>
                 <li>
                     <i class="fab fa-facebook-f" style="font-size:13px; color:orange;"></i>
-                    admin
+                    <?= isset($blog->created_at)? date('d F Y'):''?>
                 </li>
             </ul>
         </div>
@@ -65,24 +76,17 @@
 
     <div class="blogdetail-content">
         <div class="blogdetail-ttitle">
-            How to Become good designer
+            <?= $blog->title?>
         </div>
 
         <div class="blogdetails-para">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit rem, maiores commodi deserunt beatae,
-            enim ullam sed eligendi vero aut corrupti iure velit voluptatem possimus eius, officiis excepturi
-            ratione autem?
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum mollitia, quos deserunt sequi unde
-            quibusdam eius corporis perferendis non veritatis neque dolorem velit amet saepe necessitatibus ducimus rem,
-            reiciendis expedita!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum mollitia, quos deserunt sequi unde
-            quibusdam eius corporis perferendis non veritatis neque dolorem velit amet saepe necessitatibus ducimus rem,
-            reiciendis expedita!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum mollitia, quos deserunt sequi unde
-            quibusdam eius corporis perferendis non veritatis neque dolorem velit amet saepe necessitatibus ducimus rem,
-            reiciendis expedita!
+            <?= $blog->description ?>
         </div>
     </div>
+    <?php
+    }
+    ?>
+
 </body>
 
 </html>

@@ -8,7 +8,7 @@ class BlogController extends Db{
         $title=$_POST['title'];
         $description=$_POST['description'];
 
-        $data=['title'=>$title,'description'=>$description];
+        $data=['title'=>$title,'description'=>$description,'created_at'=>date('Y-m-d')];
 
         if(isset($_FILES['image'])&&!empty($_FILES['image']['name'])){
             $image=$this->uploadImage();
@@ -30,8 +30,17 @@ class BlogController extends Db{
 
         if(isset($_FILES['image'])&&!empty($_FILES['image']['name'])){
             $image=$this->uploadImage();
+            $blog=$this->getWhereData('blogs',['id'=>$id],['image'],true);
+            if($image!='error'&&$blog){
+                $old_img=$blog->image;
+                $path='../images/blogs/';
+                if(file_exists($path . $old_img)){
+                    @unlink($path.$old_img);
+                }
+            }
             if($image !='error'){
             $sql .=", image = :image";
+            if($image!=='error')
             $data['image']= $image;
             }
         }

@@ -43,6 +43,36 @@ if(isset($_POST['submit']) &&$_POST['submit']&&$_POST['submit']=='Submit'){
                 <textarea name="detail" id="detail"></textarea>
             </td>
         </tr>
+        
+        <tr>
+            <td>Contact</td>
+            <td><input type="number" name="contact" id="contact"/></td>
+        </tr>
+       
+        <tr>
+            <td>Email</td>
+            <td><input type="email" name="email" id="email"/></td>
+        </tr>
+        
+        <tr>
+            <td>Facebook</td>
+            <td><input type="text" name="facebook" id="facebook"/></td>
+        </tr>
+
+        <tr>
+            <td>Instagram</td>
+            <td><input type="text" name="instagram" id="instagram"/></td>
+        </tr>
+
+        <tr>
+            <td>Linkedin</td>
+            <td><input type="text" name="linkedin" id="linkedin"/></td>
+        </tr>
+        <tr>
+            <td>Twitter</td>
+            <td><input type="text" name="twitter" id="twitter"/></td>
+        </tr>
+
         <tr>
             <td></td>
             <td>

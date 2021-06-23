@@ -72,7 +72,7 @@ $blogs=$blogc->getData('blogs');
             <?= substr($blog->description,0,200);?>
             </div>
             <div class="readmore-btn">
-                <a href="blog_detail.php?id=<?=$blog->id?>">
+                <a href="blog_details.php?id=<?=$blog->id?>">
                     Read More
                 </a>
             </div>
