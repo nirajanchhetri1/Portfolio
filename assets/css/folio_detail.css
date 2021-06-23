@@ -1,0 +1,160 @@
+body
+{
+    background-color: #FCFCFC;
+}
+
+
+.orange-text
+{
+    color: orange;
+
+}
+.logo-text
+{
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    font-size: 130%;
+}
+ul li {
+    font-family: 'Roboto', sans-serif;
+    list-style: none;
+    padding: 10px 12px 12px 30px;
+    
+}
+ul {
+    display:flex
+}
+nav{
+    display: flex;
+justify-content: space-between;
+padding: 0px 104px;
+}
+ul li a{
+    text-decoration:none ;
+    color: black;
+    font-size: 150%;
+
+}
+ul li a:hover {
+cursor: pointer;
+color: orange;
+}
+.center{
+text-align:center;
+font-family: 'Roboto', sans-serif;
+font-size: 175%;
+text-transform: uppercase;
+font-weight: bold;
+
+
+}
+.folio-detailslow{
+    display: flex;
+    /* justify-content: center; */
+    padding: 0px 120px;
+    align-items: center;
+
+}
+
+@media (max-width:767px) {
+    .folio-detailslow{
+        display: flex;
+        flex-wrap: wrap;
+    
+    }
+}
+.folio-imagedetails{
+    width: 50%;
+    
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 20px;
+    
+}
+.folio-imagedetails img{
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.45);
+    
+}
+.foliodetails-content{
+    width:50%;
+    padding: 20px;
+}
+.caps{
+    color: orange;
+    text-transform: uppercase;
+    font-size: 200%;
+    font-family: 'Roboto', sans-serif;
+}
+ul.list{
+display: flex;
+flex-direction: column;
+}
+.list-left{
+    padding-left: 20px;
+    text-transform: uppercase;
+}
+.foliopreview-button{
+    display: flex;
+    justify-content: flex-end;
+   
+}
+.preview-btn{
+    position: relative;
+    text-decoration: none;
+    color: white;
+    background-color: orange;
+    padding: 6px 18px;
+    border-radius: 10px;
+    font-size: 150%;
+    font-family: 'Roboto', sans-serif;
+    width: fit-content;
+    right: 170px;
+    border: none;
+    margin-top: -20px;
+}
+
+.preview-btn:hover{
+    cursor: pointer;
+    background:rgb(245, 178, 53);
+}
+
+/* <!......................... overlay page css ..................*/
+.overlay{
+    background-color: black;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    opacity: 0.7;
+    display: none;
+}
+
+.overlay-box{
+    display: none;
+}
+.overlay-box img{
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 99;
+    box-shadow: 4px 4px 4px rgba(0,0,0,0.45);
+    border-radius: 8px;
+
+}
+
+.cross{
+    position: absolute;
+    top:3%;
+    right:7%;
+    color: orange;
+    z-index: 199;
+    font-size: 150%;
+    font-weight:bolder;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}

@@ -1,0 +1,44 @@
+*{
+    margin:0;
+    padding:0;
+}
+.orange-text
+{
+    color: orange;
+
+}
+
+ul li a.active{
+    color: orange;
+
+}
+.logo-text
+{
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
+    font-size: 130%;
+}
+ul li {
+    font-family: 'Roboto', sans-serif;
+    list-style: none;
+    padding: 10px 12px 12px 30px;
+    
+}
+ul {
+    display:flex
+}
+nav{
+    display: flex;
+justify-content: space-between;
+padding: 0px 104px;
+}
+ul li a{
+    text-decoration:none ;
+    color: black;
+    font-size: 150%;
+
+}
+ul li a:hover {
+cursor: pointer;
+color: orange;
+}

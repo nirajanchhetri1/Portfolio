@@ -1,0 +1,106 @@
+
+.Contact-center{
+    text-align:center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 175%;
+    text-transform: uppercase;
+    font-weight: bold;
+    }
+    .contactsmall-text{
+        text-align:center;
+        font-family: 'Roboto', sans-serif;
+        font-size: 115%;
+        font-weight:normal;
+        text-transform: uppercase;
+        margin-top: 2%;
+    }
+    
+    .contactleft-line{
+        border-bottom: 2px solid orange;
+        width: 90px;
+        position: relative;
+        margin-top:-12%;
+        margin-bottom: 10px;
+        margin-right: 28px;
+    
+    }
+    .contactright-line{
+        border-bottom: 2px solid orange;
+        width: 90px;
+        margin-bottom: 10px;
+        margin-left: 28px;
+    }
+
+    .contact-lower{
+        margin-top: 45px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .contact-details,.contactright-content{
+        width: 50%;
+        /* align-items: center; */
+    }
+
+    .contactright-content{
+        display: flex;
+        flex-direction: column;
+        /* text-align: center; */
+        /* margin: 0 auto; */
+    }
+    .contactright-content p{
+        /* padding:6px 2px 0px; */
+        width: 55%;
+        padding-bottom: 12px;
+    }
+    .contact-details ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .contact-details ul li{
+        padding: 2px 24px;
+        font-size: 150%;
+        /* font-weight: ; */
+        /* text-align: left; */
+    }
+    .contact-details ul li i{
+        color:orange;
+    }
+    .contact-details ul li p{
+        padding: 0px 0px 8px 0px;
+    }
+    
+    .three-in-1{
+        display: flex;
+        justify-content: center;
+        margin-top: -1%;
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+        margin-top: -2%;
+    }
+
+    form input, textarea{
+        width:50%;
+        margin: 12px 0px;
+        box-shadow: 2px 4px -4px rgba(0, 0, 0, 0.45);
+    }
+
+    .contact-form-btn{
+        background: orange;
+        color: white;
+        border:none;
+        outline: none;
+        padding: 12px 24px;
+        border-radius: 8px;
+        width: fit-content;
+    }
+
+    .form-field{
+        outline: none; border: none; padding: 12px; border-radius: 2px; box-shadow:1px 2px 3px rgba(0,0,0,0.23);
+    }
