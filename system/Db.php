@@ -12,13 +12,13 @@ class Db
     $this->conn = $pdo;
   }
 
-  public function query($sql,$data){
-    $stmt=$this->conn->prepare($sql);
-    if($stmt->execute($data))
-    return true;
+  public function query($sql, $data)
+  {
+    $stmt = $this->conn->prepare($sql);
+    if ($stmt->execute($data))
+      return true;
     else
-    return false;
-    
+      return false;
   }
 
 
@@ -43,32 +43,33 @@ class Db
     $sql .= " FROM $table ";
     $sql .= isset($id) && $id > 0 ? " WHERE id = :id" : '';
 
-    if(isset($limit)){
-      $sql.=" LIMIT $limit";
+    if (isset($limit)) {
+      $sql .= " LIMIT $limit";
     }
     // return $sql;
-    if(isset($id)){
-    $executedQuery = $this->executeQuery($sql, ['id'=>$id]);
-    }else{
-      $executedQuery=$this->executeQuery($sql);
+    if (isset($id)) {
+      $executedQuery = $this->executeQuery($sql, ['id' => $id]);
+    } else {
+      $executedQuery = $this->executeQuery($sql);
     }
     return isset($id) && $id > 0 ? $this->fetchSingle($executedQuery) : $this->fetchAll($executedQuery);
   }
 
-  public function getWhereData($table,$where=array(),$select=array(),$single=false){
-    $sql='SELECT ';
+  public function getWhereData($table, $where = array(), $select = array(), $single = false)
+  {
+    $sql = 'SELECT ';
     if (isset($select) && count($select) > 0) {
       $sql .= implode(', ', $select);
     } else {
       $sql .= '*';
     }
 
-    $sql .=" FROM $table";
-    foreach($where as $key => $value){
+    $sql .= " FROM $table";
+    foreach ($where as $key => $value) {
       $sql .= " WHERE $key = :$key";
     }
-  $executedQuery=$this->executeQuery($sql,$where);
-  return $single?$this->fetchSingle($executedQuery) : $this->fetchAll($executedQuery);
+    $executedQuery = $this->executeQuery($sql, $where);
+    return $single ? $this->fetchSingle($executedQuery) : $this->fetchAll($executedQuery);
   }
 
   private function prepareQuery($query)
@@ -76,13 +77,13 @@ class Db
     return $this->conn->prepare($query);
   }
 
-  private function executeQuery($query, $data=null)
+  private function executeQuery($query, $data = null)
   {
     $stmt = $this->prepareQuery($query);
-    if(isset($data))
-    $stmt->execute($data);
+    if (isset($data))
+      $stmt->execute($data);
     else
-    $stmt->execute();
+      $stmt->execute();
     return $stmt;
   }
 
@@ -111,7 +112,7 @@ class Db
 
   private function fetchSingle($stmt)
   {
-    $data= $stmt->fetch();
+    $data = $stmt->fetch();
 
     return $data;
   }

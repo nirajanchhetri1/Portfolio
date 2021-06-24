@@ -1,3 +1,8 @@
+<?php
+require_once 'system/AboutController.php';
+$about = new AboutController();
+$result = $about->getWhereData('about', ['id' => 1], [], true);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,31 +25,12 @@
             <p class="logo-text"> Sabi<span class="orange-text">ta</span></p>
 
         </div>
-
-        <div>
-            <ul>
-                <li>
-                    <a href="#">Home</a>
-                </li>
-                <li>
-                    <a class="active" href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">Protfolio</a>
-                </li>
-                <li>
-                    <a href="#">Blog</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
-            </ul>
-        </div>
+        <?= require_once './nav_bar.php' ?>
     </nav>
 
     <div class="about-info">
         <div class="about-image">
-            <img src="./assets/img/mk-2.jpg" alt="about-image">
+            <img src="./images/about/<?= $result->image ?>" alt="about-image">
             <div class="image-border"></div>
         </div>
 
@@ -52,32 +38,32 @@
         <ul class="info-left">
             <li>
                 <p>First Name</p>
-                <p>Sabita</p>
+                <p><?= isset($result) ? $result->first_name : '' ?></p>
                 <!-- First Name <span>Sabita</span> -->
             </li>
             <li>
                 <p>Last Name</p>
-                <p>Bhattarai</p>
+                <p><?= isset($result) ? $result->last_name : '' ?></p>
                 <!-- Last Name <span>Bhattarai</span> -->
             </li>
             <li>
                 <p>Birthdate</p>
-                <p>21 June 1990</p>
+                <p><?= isset($result) ? $result->birthday : '' ?></p>
                 <!-- Birthdate <span>21 June 1990</span> -->
             </li>
             <li>
                 <p>Nationality </p>
-                <p>Nepali</p>
+                <p><?= isset($result) ? $result->nationality : '' ?></p>
                 <!-- Nationality <span>Nepali</span> -->
             </li>
             <li>
                 <p>Experience</p>
-                <p>3 years</p>
+                <p><?= isset($result) ? $result->experience : '' ?></p>
                 <!-- Experience <span>3 years</span> -->
             </li>
             <li>
                 <p>Address</p>
-                <p>Kathmandu, Nepal</p>
+                <p><?= isset($result) ? $result->address : '' ?></p>
                 <!-- Address <span>Kathmandu, Nepal</span> -->
             </li>
             <div class="cv-button">
@@ -89,22 +75,22 @@
         <ul class="info-right">
             <li>
                 <p>Freelance</p>
-                <p>Available</p>
+                <p><?= isset($result) ? $result->frelance : '' ?></p>
                 <!-- First Name <span>Sabita</span> -->
             </li>
             <li>
                 <p>Languages</p>
-                <p>Nepali</p>
+                <p><?= isset($result) ? $result->languages : '' ?></p>
                 <!-- Last Name <span>Bhattarai</span> -->
             </li>
             <li>
                 <p>Phone</p>
-                <p>99898989898</p>
+                <p><?= isset($result) ? $result->phone : '' ?></p>
                 <!-- Birthdate <span>21 June 1990</span> -->
             </li>
             <li>
                 <p>Email </p>
-                <p>aaaaaaaaaNepali@gmail.com</p>
+                <p><?= isset($result) ? $result->email : '' ?></p>
                 <!-- Nationality <span>Nepali</span> -->
             </li>
         </ul>

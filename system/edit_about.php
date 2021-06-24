@@ -14,7 +14,7 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
 if (isset($_POST['submit']) && $_POST['submit'] && $_POST['submit'] == 'Submit') {
     $about = new AboutController();
 
-    $data = $blog->updateData();
+    $data = $about->updateData();
 
     if (isset($data)) {
         header('location: about.php');
@@ -38,60 +38,62 @@ if (isset($_POST['submit']) && $_POST['submit'] && $_POST['submit'] == 'Submit')
         <table>
             <tr>
                 <td>First Name</td>
-                <td><input type="text" name="first_name" value="<?= isset($selectedData->first_name)?$selectedData->first_name:''?>" /></td>
+                <td><input type="text" name="first_name" value="<?= isset($selectedData->first_name) ? $selectedData->first_name : '' ?>" /></td>
             </tr>
-            
+
             <tr>
                 <td>Last Name</td>
-                <td><input type="text" name="last_name" value="<?= isset($selectedData->last_name)?$selectedData->last_name:''?>" /></td>
+                <td><input type="text" name="last_name" value="<?= isset($selectedData->last_name) ? $selectedData->last_name : '' ?>" /></td>
             </tr>
-            
+
             <tr>
                 <td>Birthdate</td>
-                <td><input type="date" name="birthdate" value="<?= isset($selectedData->birthdate)?$selectedData->birthdate:''?>" /></td>
+                <td><input type="date" name="birthdate" value="<?= isset($selectedData->birthdate) ? $selectedData->birthdate : '' ?>" /></td>
             </tr>
 
             <tr>
                 <td>Nationality</td>
-                <td><input type="text" name="nationality" value="<?= isset($selectedData->nationality)?$selectedData->nationality:''?>" /></td>
+                <td><input type="text" name="nationality" value="<?= isset($selectedData->nationality) ? $selectedData->nationality : '' ?>" /></td>
             </tr>
-            
+
             <tr>
                 <td>Experience</td>
-                <td><input type="text" name="experience"  value="<?= isset($selectedData->experience)?$selectedData->experience:''?>"/></td>
+                <td><input type="text" name="experience" value="<?= isset($selectedData->experience) ? $selectedData->experience : '' ?>" /></td>
             </tr>
-            
+
             <tr>
                 <td>Address</td>
-                <td><input type="text" name="address" value="<?= isset($selectedData->address)?$selectedData->address:''?>" /></td>
+                <td><input type="text" name="address" value="<?= isset($selectedData->address) ? $selectedData->address : '' ?>" /></td>
             </tr>
-            
+
             <tr>
                 <td>Freelance</td>
                 <td>
-                    <input type="checkbox" name="frelance" value="1" id="isAvailable"/> <labe for="isAvailable">Available</labe>
+                    <input type="checkbox" name="frelance" value="1" id="isAvailable" <?= isset($selectedData->languages) && $selectedData->frelance == '1' ? 'checked' : '' ?> />
+                    <labe for="isAvailable">Available</labe>
                 </td>
             </tr>
 
             <tr>
                 <td>Languages</td>
-                <td><input type="text" name="languages" value="<?= isset($selectedData->languages)?$selectedData->languages:''?>" /></td>
+                <td><input type="text" name="languages" value="<?= isset($selectedData->languages) ? $selectedData->languages : '' ?>" /></td>
             </tr>
-            
+
             <tr>
                 <td>Phone</td>
-                <td><input type="text" name="phone" value="<?= isset($selectedData->phone)?$selectedData->phone:''?>" /></td>
+                <td><input type="text" name="phone" value="<?= isset($selectedData->phone) ? $selectedData->phone : '' ?>" /></td>
             </tr>
-            
+
             <tr>
                 <td>Email</td>
-                <td><input type="email" name="email" value="<?= isset($selectedData->email)?$selectedData->email:''?>" /></td>
+                <td><input type="email" name="email" value="<?= isset($selectedData->email) ? $selectedData->email : '' ?>" /></td>
             </tr>
 
             <tr>
                 <td>Image</td>
                 <td><input type="file" name="image" /></td>
             </tr>
+            <input type="hidden" name="id" value="<?= $selectedData->id ?>" />
             <tr>
                 <td></td>
                 <td><input type="submit" name="submit" value="Submit" /></td>
