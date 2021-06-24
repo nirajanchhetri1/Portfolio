@@ -1,3 +1,24 @@
+<?php
+require_once 'system/Db.php';
+
+$db = new Db();
+
+$result = $db->getWhereData('home_page', ['id' => 1], ['contact', 'email', 'facebook', 'instagram', 'linkedin', 'twitter'], true);
+
+$contactDescription = $db->getWhereData('page_detail', ['page' => 'contact'], ['description', 'extra_description'], true);
+
+
+$message = null;
+if (isset($_POST['submit']) && $_POST['submit'] == 'SEND MESSAGE') {
+    require_once './system/ContactController.php';
+    $contactC = new ContactController();
+    $contact = $contactC->saveData();
+
+    if ($contact) {
+        $message = "Thank you for your comment.";
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,25 +42,8 @@
 
         </div>
 
-        <div>
-            <ul>
-                <li>
-                    <a href="index.php">Home</a>
-                </li>
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">Protfolio</a>
-                </li>
-                <li>
-                    <a href="#">Protfolio</a>
-                </li>
-                <li>
-                    <a class="active" href="#">Contact</a>
-                </li>
-            </ul>
-        </div>
+        <?php require_once 'nav_bar.php'; ?>
+
     </nav>
 
     <div class="Contact-center">
@@ -55,7 +59,7 @@
         </div>
         <div class="contactsmall-text">
             <p>
-                I welcome your valuable suggestions.
+                <?= (isset($contactDescription) && isset($contactDescription->description)) ? $contactDescription->description : ''; ?>
             </p>
         </div>
         <div class="contactright-line">
@@ -64,48 +68,64 @@
     <div class="contact-lower">
         <div class="contact-details">
             <ul>
-                
 
-                <li>
-                    <p>Email</p>
-                    <!-- <i class="fab fa-facebook-f" style="font-size:13px; color:orange;"></i>i -->
-                    <i class="fas fa-envelope"></i>
-                    sabh@gmail.com
-                </li>
-                <li>
-                    <p>Instagram</p>
-                    <!-- <i class="fab fa-facebook-f" style="font-size:13px; color:orange;"></i>i -->
-                    <i class="fab fa-instagram"></i>
-                    sabitabhattarai
-                </li>
-                <li>
-                    <p>Linkedin</p>
-                    <!-- <i class="fab fa-facebook-f" style="font-size:13px; color:orange;"></i>i -->
-                    <i class="fab fa-linkedin-in"></i>
-                    Sabita Bhattarai 
-                </li>
+                <?php if (isset($result) && isset($result->contact)) : ?>
+                    <li>
+                        <p>Contact</p>
+                        <!-- <i class="fab fa-facebook-f" style="font-size:13px; color:orange;"></i>i -->
+                        <i class="fas fa-envelope"></i>
+                        <?= $result->contact ?>
+                    </li>
+                <?php endif; ?>
+                <?php if (isset($result) && isset($result->email)) : ?>
+                    <li>
+                        <p>Email</p>
+                        <!-- <i class="fab fa-facebook-f" style="font-size:13px; color:orange;"></i>i -->
+                        <i class="fas fa-envelope"></i>
+                        <?= $result->email ?>
+                    </li>
+                <?php endif; ?>
+
+                <?php if (isset($result) && isset($result->instagram)) : ?>
+                    <li>
+                        <p>Instagram</p>
+                        <!-- <i class="fab fa-facebook-f" style="font-size:13px; color:orange;"></i>i -->
+                        <i class="fab fa-instagram"></i>
+                        <?= $result->instagram ?>
+                    </li>
+                <?php endif; ?>
+
+                <?php if (isset($result) && isset($result->linkedin)) : ?>
+                    <li>
+                        <p>Linkedin</p>
+                        <!-- <i class="fab fa-facebook-f" style="font-size:13px; color:orange;"></i>i -->
+                        <i class="fab fa-linkedin-in"></i>
+                        <?= $result->linkedin ?>
+                    </li>
+                <?php endif; ?>
                 <!-- <li>
             <p>Phone</p>
                     <!-- <i class="fab fa-facebook-f" style="font-size:13px; color:orange;"></i>i -->
-                    <!-- <i class="fas fa-phone"></i> -->
-                    <!-- 9846562256
-                </li> --> -->
+                <!-- <i class="fas fa-phone"></i> -->
+                <!-- 9846562256
+                </li> -->
+                <?php if (isset($result) && isset($result->twitter)) : ?>
+                    <li>
+                        <p>Twitter </p>
+                        <i class="fab fa-twitter"></i>
+                        <?= $result->twitter ?>
 
-                <li>
-                <p>Twitter </p>
-                <i class="fab fa-twitter"></i>
-                sabitabhattrrai
-
-                </li>
+                    </li>
+                <?php endif; ?>
                 <div class="follow" style="width: fit-content; margin-top: 12px;">
-                <li>
-                   
-                    Follow Me
-                    <div class="social-icons">
-                        <a href=""><i class="fab fa-facebook-f my" style="font-size:13px;"></i></a>
-                        <a href=""><i class="fab fa-linkedin-in my" style="font-size:14px;"></i></a>
-                        <a href=""><i class="fa fa-instagram my" style="font-size:14px;"></i></a>
-                    </div>
+                    <li>
+
+                        Follow Me
+                        <div class="social-icons">
+                            <a href=""><i class="fab fa-facebook-f my" style="font-size:13px;"></i></a>
+                            <a href=""><i class="fab fa-linkedin-in my" style="font-size:14px;"></i></a>
+                            <a href=""><i class="fa fa-instagram my" style="font-size:14px;"></i></a>
+                        </div>
                 </div>
             </ul>
 
@@ -114,16 +134,21 @@
         </div>
         <div class="contactright-content">
             <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, dicta repellat, totam voluptates vero
+                <?= isset($contactDescription) && isset($contactDescription->extra_description) ? $contactDescription->extra_description : '' ?>
             </p>
-
-            <form>
+            <?php
+            if (isset($message)) {
+            ?>
+                <p><?= $message ?></p>
+            <?php
+            }
+            ?>
+            <form action="" method="POST">
                 <input type="text" name="name" id="your_name" placeholder="YOUR NAME" class="form-field">
                 <input type="text" name="email" id="your_email" placeholder="YOUR EMAIL" class="form-field">
-                <textarea name="" id="" cols="30" rows="5" placeholder="WRITE YOUR COMMENT HERE"
-                    class="form-field"></textarea>
+                <textarea name="comment" id="" cols="30" rows="5" placeholder="WRITE YOUR COMMENT HERE" class="form-field"></textarea>
 
-                <input type="submit" value="SEND MESSAGE" class="contact-form-btn">
+                <input type="submit" name="submit" value="SEND MESSAGE" class="contact-form-btn">
             </form>
         </div>
     </div>

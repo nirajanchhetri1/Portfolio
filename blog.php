@@ -1,8 +1,8 @@
 <?php
 
 require_once 'system/BlogController.php';
-$blogc=new BlogController();
-$blogs=$blogc->getData('blogs');
+$blogc = new BlogController();
+$blogs = $blogc->getData('blogs');
 
 ?>
 
@@ -17,7 +17,7 @@ $blogs=$blogc->getData('blogs');
     <link rel="stylesheet" href="assets/css/nav.css">
     <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
-    
+
 </head>
 
 <body>
@@ -27,26 +27,7 @@ $blogs=$blogc->getData('blogs');
 
         </div>
 
-        <div>
-            <ul>
-                <li>
-                    <a href="index.php">Home</a>
-                </li>
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">Protfolio</a>
-                </li>
-                <li>
-
-                    <a class="active" href="#">Blog</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
-            </ul>
-        </div>
+        <?php require_once './nav_bar.php' ?>
     </nav>
     <div class="my-blogs">
         <p>
@@ -56,31 +37,31 @@ $blogs=$blogc->getData('blogs');
 
     <div class="my-cards">
 
-    <?php
-    foreach($blogs as $blog){
-    ?>
-        <div class="blog-card">
-            <div class="blog-img">
-                <img src="./images/blogs/<?= $blog->image?>" alt="" class="src">
-            </div>
-            <div class="blog-title">
-                <p>
-                   <?= $blog->title?>
-                </p>
-            </div>
-            <div class="blog-content">
-            <?= substr($blog->description,0,200);?>
-            </div>
-            <div class="readmore-btn">
-                <a href="blog_details.php?id=<?=$blog->id?>">
-                    Read More
-                </a>
-            </div>
-
-        </div>
         <?php
-    }
-    ?>
+        foreach ($blogs as $blog) {
+        ?>
+            <div class="blog-card">
+                <div class="blog-img">
+                    <img src="./images/blogs/<?= $blog->image ?>" alt="" class="src">
+                </div>
+                <div class="blog-title">
+                    <p>
+                        <?= $blog->title ?>
+                    </p>
+                </div>
+                <div class="blog-content">
+                    <?= substr($blog->description, 0, 200); ?>
+                </div>
+                <div class="readmore-btn">
+                    <a href="blog_details.php?id=<?= $blog->id ?>">
+                        Read More
+                    </a>
+                </div>
+
+            </div>
+        <?php
+        }
+        ?>
 
         <!-- <div class="blog-card">
             <div class="blog-img">

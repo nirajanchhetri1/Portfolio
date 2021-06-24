@@ -1,9 +1,9 @@
 <?php
 require_once 'system/BlogController.php';
 
-if(isset($_GET['id'])&&$_GET['id']>0){
-    $blogc=new BlogController();
-    $blog=$blogc->getWhereData('blogs',['id'=>$_GET['id']],[],true);
+if (isset($_GET['id']) && $_GET['id'] > 0) {
+    $blogc = new BlogController();
+    $blog = $blogc->getWhereData('blogs', ['id' => $_GET['id']], [], true);
 }
 ?>
 <!DOCTYPE html>
@@ -28,26 +28,8 @@ if(isset($_GET['id'])&&$_GET['id']>0){
 
         </div>
 
-        <div>
-            <ul>
-                <li>
-                    <a href="index.php">Home</a>
-                </li>
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">Protfolio</a>
-                </li>
-                <li>
+        <?php require_once 'nav_bar.php'; ?>
 
-                    <a class="active" href="#">Blog</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
-            </ul>
-        </div>
     </nav>
     <div class="blog-details">
         <p>
@@ -55,36 +37,36 @@ if(isset($_GET['id'])&&$_GET['id']>0){
         </p>
     </div>
     <?php
-    if(isset($blog)){
+    if (isset($blog)) {
     ?>
 
-    <div class="blog-detailimg">
-        <img src="./images/blogs/<?= $blog->image?>" alt="" class="src">
+        <div class="blog-detailimg">
+            <img src="./images/blogs/<?= $blog->image ?>" alt="" class="src">
 
-        <div class="black-overlay">
+            <div class="black-overlay">
 
-        </div>
-        <div class="info-list">
-            <ul>
-                <li>
-                    
-                    <i class="fas fa-calendar-alt" style="font-size:13px; color:orange;"></i>
+            </div>
+            <div class="info-list">
+                <ul>
+                    <li>
 
-                    <?= isset($blog->created_at)? date('d F Y'):''?>
-                </li>
-            </ul>
-        </div>
-    </div>
+                        <i class="fas fa-calendar-alt" style="font-size:13px; color:orange;"></i>
 
-    <div class="blogdetail-content">
-        <div class="blogdetail-ttitle">
-            <?= $blog->title?>
+                        <?= isset($blog->created_at) ? date('d F Y') : '' ?>
+                    </li>
+                </ul>
+            </div>
         </div>
 
-        <div class="blogdetails-para">
-            <?= $blog->description ?>
+        <div class="blogdetail-content">
+            <div class="blogdetail-ttitle">
+                <?= $blog->title ?>
+            </div>
+
+            <div class="blogdetails-para">
+                <?= $blog->description ?>
+            </div>
         </div>
-    </div>
     <?php
     }
     ?>

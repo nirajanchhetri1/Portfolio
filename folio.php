@@ -3,8 +3,8 @@
 require_once './system/PortfolioController.php';
 require_once './system/PageController.php';
 
-$page=new PageController();
-$page_detail=$page->getWhereData('page_detail',['page'=>'portfolio'],[],true);
+$page = new PageController();
+$page_detail = $page->getWhereData('page_detail', ['page' => 'portfolio'], [], true);
 
 $portfolio = new PortfolioController();
 $result = $portfolio->all();
@@ -29,26 +29,7 @@ $result = $portfolio->all();
 
         </div>
 
-        <div>
-            <ul>
-                <li>
-                    <a href="index.php">Home</a>
-                </li>
-                <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a class="active" href="#">Protfolio</a>
-                </li>
-                <li>
-                    <a href="#">Blog</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
-            </ul>
-
-        </div>
+        <?php require_once 'nav_bar.php'; ?>
 
     </nav>
     <section id="card">
@@ -66,34 +47,34 @@ $result = $portfolio->all();
             </div>
             <div class="small-text">
                 <p>
-                <?= isset($page_detail->description)?$page_detail->description: '' ?>
+                    <?= isset($page_detail->description) ? $page_detail->description : '' ?>
                 </p>
             </div>
             <div class="right-line">
             </div>
         </div>
     </section>
-        <section id="folio-card">
+    <section id="folio-card">
 
-        
-            <div class="folio-cards">
+
+        <div class="folio-cards">
             <?php
-        foreach($result as $port){
-        ?>
-                <a href="folio_detail.php?id=<?=$port->id?>">
+            foreach ($result as $port) {
+            ?>
+                <a href="folio_detail.php?id=<?= $port->id ?>">
                     <div class="folio-image">
-                        <img src="./images//portfolio/<?=$port->image?>" alt="" class="src">
+                        <img src="./images//portfolio/<?= $port->image ?>" alt="" class="src">
                     </div>
                 </a>
-                <?php
-        }
+            <?php
+            }
             ?>
-            </div>
-
-            
+        </div>
 
 
-            <!-- <div class="folio-cards">
+
+
+        <!-- <div class="folio-cards">
                 <a href="#">
                     <div class="folio-image">
                         <img src="./assets/img/folio.jpg" alt="" class="src">
@@ -117,7 +98,7 @@ $result = $portfolio->all();
             </div> -->
 
 
-        </section>
+    </section>
 
 
 
