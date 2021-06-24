@@ -1,0 +1,239 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* overflow-x: hidden; */
+}
+
+.about-info {
+    display: flex;
+    justify-content: center;
+    margin-top: 4%;
+    flex-wrap: wrap;
+    margin-bottom: 6%;
+}
+
+.about-image {
+    width: 18rem;
+    height: 24rem;
+    position: relative;
+    margin: 0px 24px;
+
+}
+
+.image-border {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 4px solid orange;
+    top: 5%;
+    left: 5%;
+    z-index: -1;
+
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    z-index: 12;
+    margin-top: 2%;
+}
+
+.about-info-list {
+    display: flex;
+    flex-direction: row;
+}
+
+ul.info-left {
+    display: flex;
+    flex-direction: column;
+    padding: 0 24px;
+    margin-top: 0.6%;
+}
+
+ul.info-left li {
+    display: flex;
+    /* justify-content: space-around; */
+    text-align: left;
+}
+
+ul.info-left li p {
+    text-align: left;
+    width: 124px;
+    font-weight: bold;
+    font-size: 125%;
+}
+
+
+ul.info-right {
+    display: flex;
+    flex-direction: column;
+    padding: 0 24px;
+    margin-top: 0.6%;
+
+}
+
+ul.info-right li span {
+    padding: 0px 24px;
+}
+
+ul.info-right li {
+    display: flex;
+    /* justify-content: space-around; */
+    text-align: left;
+    font-weight: bold;
+    font-size: 125%;
+}
+
+ul.info-right li p {
+    text-align: left;
+    width: 124px;
+    /* word-break: ; */
+}
+
+.info-left .cv-button {
+    margin-left: 10%;
+    margin-top: 22%;
+}
+/* --------------------------------
+    Edu cationand Exeperience
+-----------------------------------*/
+.my-hr {
+    margin-bottom: 4%;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.ex-edu {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin: 0 auto;
+    padding: 34px 179px;
+}
+
+.experience p {
+    font-family: 'Roboto';
+    color: orange;
+    font-weight: bold;
+    font-size: 125%;
+    text-align: left;
+}
+
+.experience {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto';
+
+}
+
+.experience-list {
+    padding: 20px 6px;
+    font-family: 'Roboto';
+
+}
+
+.education {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.education p {
+    color: orange;
+    font-weight: bold;
+    font-size: 125%;
+    font-family: 'Roboto';
+
+}
+
+.education-list {
+    padding: 20px 6px;
+    font-family: 'Roboto';
+
+}
+
+.experience-list div {
+    padding-bottom: 2px;
+}
+
+.education-list div {
+    padding-bottom: 2px;
+}
+
+.experience-list .time,
+.experience-list .profession span,
+.education-list .time,
+.education-list .profession span {
+    color: orange;
+    font-weight: bold;
+}
+
+
+
+
+
+/* -------------------------------------------------
+                    Skillset CSS        
+---------------------------------------------------- */
+.my-skills {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 44px;
+    color: orange;
+    font-weight: bold;
+    padding: 0px 180px;
+    font-size: 125%;
+    font-family: 'Roboto';
+
+
+}
+
+.skillset {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-bottom: 124px;
+    font-family: 'Roboto';
+
+}
+
+.skill {
+    display: flex;
+    flex-direction: column;
+    width: 30vw;
+    padding: 12px 0px;
+}
+
+ul.skill-text-no {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 125%;
+}
+
+.percent-bar {
+    position: relative;
+}
+
+.percent-bar .gray-bar {
+    width: 100%;
+    background-color: gray;
+    height: 18px;
+    border-radius: 12px;
+}
+
+.percent-bar .coloured-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 18px;
+    border-radius: 12px;
+}
+
+.skill-field {
+    margin-left: -7%;
+}
+
