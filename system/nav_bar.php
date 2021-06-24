@@ -17,4 +17,7 @@
   <li>
     <a href="cvs.php">CV</a>
   </li>
+  <li>
+    <a href="about.php">About</a>
+  </li>
 </ul>

@@ -4,7 +4,7 @@
             <a class="<?= $_SERVER['REQUEST_URI'] == '/index.php' ? 'active' : '' ?>" href="index.php">Home</a>
         </li>
         <li>
-            <a class="<?= $_SERVER['REQUEST_URI'] == '/about.php' ? 'active' : '' ?>" href="#">About</a>
+            <a class="<?= $_SERVER['REQUEST_URI'] == '/about.php' ? 'active' : '' ?>" href="about.php">About</a>
         </li>
         <li>
             <a class="<?= $_SERVER['REQUEST_URI'] == '/folio.php' ? 'active' : '' ?>" href="folio.php">Protfolio</a>
