@@ -38,7 +38,7 @@ foreach ($result as $newData) {
 
 <body>
     <nav>
-        <div>
+        <div class="logo-nav">
             <p class="logo-text">Sabi<span class="orange-text">ta</span></p>
         </div>
 
@@ -54,8 +54,10 @@ foreach ($result as $newData) {
                 </p>
                 <p class="margin-top">
                     <span class="orange-text">A </span> <?= count($data) > 0 ? $data['profession'] : '' ?> |
-
                 </p>
+
+                <img src="<?= count($data) > 0 ? './images/' . $data['image'] : '' ?>" alt="" width="50" class="view_mobile">
+
                 <p class="small-text">
                     <!-- In a professional context it often happens that private<br>
                     clients corder a publication to be made. -->

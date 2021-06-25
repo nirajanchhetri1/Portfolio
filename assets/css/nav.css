@@ -1,44 +1,49 @@
-*{
-    margin:0;
-    padding:0;
+* {
+    margin: auto;
+    padding: 0;
 }
-.orange-text
-{
+
+.orange-text {
     color: orange;
-
 }
 
-ul li a.active{
+ul li a.active {
     color: orange;
-
 }
-.logo-text
-{
+
+.logo-text {
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
     font-size: 130%;
 }
+
 ul li {
     font-family: 'Roboto', sans-serif;
     list-style: none;
     padding: 10px 12px 12px 30px;
-    
 }
+
 ul {
-    display:flex
+    display: flex
 }
-nav{
+
+nav {
     display: flex;
-justify-content: space-between;
-padding: 0px 104px;
+    justify-content: space-between;
+    padding: 24px 104px 0px 104px;
 }
-ul li a{
-    text-decoration:none ;
+
+.logo-nav{
+    margin: 0 !important;
+}
+
+ul li a {
+    text-decoration: none;
     color: black;
     font-size: 150%;
-
 }
+
 ul li a:hover {
-cursor: pointer;
-color: orange;
+    cursor: pointer;
+    color: orange;
 }

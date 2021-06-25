@@ -101,7 +101,7 @@ $skills = $skillC->getData('skills');
         <ul class="info-right">
             <li>
                 <p>Freelance</p>
-                <p><?= isset($result) ? $result->frelance : '' ?></p>
+                <p><?= isset($result) && $result->frelance==1 ? 'Available': 'Unavailable' ?></p>
                 <!-- First Name <span>Sabita</span> -->
             </li>
             <li>
