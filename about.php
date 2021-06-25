@@ -1,7 +1,12 @@
 <?php
 require_once 'system/AboutController.php';
+require_once 'system/EducationController.php';
+
 $about = new AboutController();
 $result = $about->getWhereData('about', ['id' => 1], [], true);
+
+$educationc = new EducationController();
+$educaitons = $educationc->getData('educations');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -48,7 +53,7 @@ $result = $about->getWhereData('about', ['id' => 1], [], true);
             </li>
             <li>
                 <p>Birthdate</p>
-                <p><?= isset($result) ? $result->birthday : '' ?></p>
+                <p><?= isset($result) ? $result->birthdate : '' ?></p>
                 <!-- Birthdate <span>21 June 1990</span> -->
             </li>
             <li>
@@ -129,25 +134,30 @@ $result = $about->getWhereData('about', ['id' => 1], [], true);
         <div class="education">
             <p>EDUCATION</p>
 
+            <?php
+            foreach ($educaitons as $education) {
+            ?>
+                <div class="education-list">
+                    <div class="time"><?= $education->start_date ?> - <?= $education->end_date ?></div>
+                    <div class="profession"><?= $education->degree ?> <span><?= $education->school ?></span></div>
+                    <div class="description"><?= $education->description ?></div>
+                </div>
+            <?php
+            }
+            ?>
+            <!-- 
             <div class="education-list">
                 <div class="time">i 2017 - 2019</div>
                 <div class="profession">WEB DESIGNER <span>ENVVVATO</span></div>
                 <div class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla voluptate harum
                     provident.</div>
             </div>
-
             <div class="education-list">
                 <div class="time">i 2017 - 2019</div>
                 <div class="profession">WEB DESIGNER <span>ENVVVATO</span></div>
                 <div class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla voluptate harum
                     provident.</div>
-            </div>
-            <div class="education-list">
-                <div class="time">i 2017 - 2019</div>
-                <div class="profession">WEB DESIGNER <span>ENVVVATO</span></div>
-                <div class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla voluptate harum
-                    provident.</div>
-            </div>
+            </div> -->
         </div>
     </div>
 

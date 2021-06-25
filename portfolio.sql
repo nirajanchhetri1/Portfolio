@@ -11,11 +11,36 @@
  Target Server Version : 100419
  File Encoding         : 65001
 
- Date: 24/06/2021 10:32:44
+ Date: 25/06/2021 10:09:16
 */
 
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for about
+-- ----------------------------
+DROP TABLE IF EXISTS `about`;
+CREATE TABLE `about`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `last_name` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `birthdate` date NULL DEFAULT NULL,
+  `nationality` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `experience` varchar(40) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `address` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `frelance` tinyint(1) NOT NULL DEFAULT 1,
+  `languages` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `phone` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `email` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of about
+-- ----------------------------
+INSERT INTO `about` VALUES (1, 'Nirajan', 'che', '2021-06-24', 'fasd', 'fd', 'kathmandu', 1, 'gfdg', '9846562256', 'nirajanchhetri6@gmail.com', '1624529834.png');
 
 -- ----------------------------
 -- Table structure for blogs
@@ -65,6 +90,28 @@ CREATE TABLE `cvs`  (
 -- ----------------------------
 -- Records of cvs
 -- ----------------------------
+
+-- ----------------------------
+-- Table structure for educations
+-- ----------------------------
+DROP TABLE IF EXISTS `educations`;
+CREATE TABLE `educations`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `degree` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `start_date` date NULL DEFAULT NULL,
+  `end_date` date NULL DEFAULT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL,
+  `school` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of educations
+-- ----------------------------
+INSERT INTO `educations` VALUES (3, 'Slc', '2021-06-07', '2021-06-17', 'fasdfasd', 'abc');
+INSERT INTO `educations` VALUES (4, '+2', '2021-06-16', '2021-06-26', 'fsdfsad', 'xyz');
+INSERT INTO `educations` VALUES (5, 'Bachelor', '2021-06-16', '2021-06-10', 'fasdf', NULL);
+INSERT INTO `educations` VALUES (6, 'fsadf', '2021-06-08', '2021-07-01', 'fasdfsad', 'fsadfsadfasdfasd');
 
 -- ----------------------------
 -- Table structure for home_page
