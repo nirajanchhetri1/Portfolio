@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once './EducationController.php';
+require_once './ExperienceController.php';
 
 
 if (!isset($_SESSION['logedin']) && $_SESSION['logedin'] == false) {
@@ -9,11 +9,11 @@ if (!isset($_SESSION['logedin']) && $_SESSION['logedin'] == false) {
 
 if (isset($_GET['id']) && $_GET['id'] > 0) {
 
-  $educationC = new EducationController();
+  $experienceC = new ExperienceController();
 
-  $selectedData = $educationC->deleteData($_GET['id']);
+  $selectedData = $experienceC->deleteData($_GET['id']);
 
   if ($selectedData) {
-    header('location: educations.php');
+    header('location: experiences.php');
   }
 }

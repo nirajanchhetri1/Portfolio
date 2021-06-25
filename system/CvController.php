@@ -18,6 +18,18 @@ class CvController extends Db
     return  $this->create('cvs', $data);
   }
 
+  public function getCv()
+  {
+
+    $sel = "SELECT id from cvs WHERE status = 'active' ORDER BY id DESC limit 1";
+    $con = $this->getConnection();
+    $sth = $con->prepare($sel);
+
+    $sth->execute();
+    $result = $sth->fetch();
+    return $result;
+  }
+
   private function uploadCv()
   {
     $file_name = $_FILES['cv_file']['name'];

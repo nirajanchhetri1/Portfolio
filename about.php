@@ -1,12 +1,24 @@
 <?php
 require_once 'system/AboutController.php';
 require_once 'system/EducationController.php';
+require_once 'system/ExperienceController.php';
+require_once 'system/SkillController.php';
+require_once 'system/CvController.php';
 
 $about = new AboutController();
 $result = $about->getWhereData('about', ['id' => 1], [], true);
 
+$cvC = new CvController();
+$cv = $cvC->getCv();
+
 $educationc = new EducationController();
 $educaitons = $educationc->getData('educations');
+
+$experienceC = new EducationController();
+$experiences = $experienceC->getData('experiences');
+
+$skillC = new SkillController();
+$skills = $skillC->getData('skills');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -71,10 +83,19 @@ $educaitons = $educationc->getData('educations');
                 <p><?= isset($result) ? $result->address : '' ?></p>
                 <!-- Address <span>Kathmandu, Nepal</span> -->
             </li>
-            <div class="cv-button">
-                Download CV
-                <!-- </li> -->
-            </div>
+            <?php
+
+            if (count((array) $cv) > 0) {
+            ?>
+                <div class="cv-button">
+                    <a href="download.php?file=<?= $cv->id ?>">Download CV</a>
+
+                    <!-- </li> -->
+                </div>
+            <?php
+
+            }
+            ?>
         </ul>
 
         <ul class="info-right">
@@ -109,7 +130,19 @@ $educaitons = $educationc->getData('educations');
     <div class="ex-edu">
         <div class="experience">
             <p>EXPERIENCE</p>
-            <div class="experience-list">
+            <?php
+            foreach ($experiences as $experience) {
+            ?>
+                <div class="experience-list">
+                    <div class="time">i <?= $experience->start_date ?> - <?= $experience->end_date ?></div>
+                    <div class="profession"><?= $experience->position ?> <span><?= $experience->company ?></span></div>
+                    <div class="description"><?= $experience->description ?></div>
+                </div>
+            <?php
+            }
+            ?>
+
+            <!-- <div class="experience-list">
                 <div class="time">i 2017 - 2019</div>
                 <div class="profession">WEB DESIGNER <span>ENVVVATO</span></div>
                 <div class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla voluptate harum
@@ -121,14 +154,7 @@ $educaitons = $educationc->getData('educations');
                 <div class="profession">WEB DESIGNER <span>ENVVVATO</span></div>
                 <div class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla voluptate harum
                     provident.</div>
-            </div>
-
-            <div class="experience-list">
-                <div class="time">i 2017 - 2019</div>
-                <div class="profession">WEB DESIGNER <span>ENVVVATO</span></div>
-                <div class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla voluptate harum
-                    provident.</div>
-            </div>
+            </div> -->
 
         </div>
         <div class="education">
@@ -138,7 +164,7 @@ $educaitons = $educationc->getData('educations');
             foreach ($educaitons as $education) {
             ?>
                 <div class="education-list">
-                    <div class="time"><?= $education->start_date ?> - <?= $education->end_date ?></div>
+                    <div class="time">i <?= $education->start_date ?> - <?= $education->end_date ?></div>
                     <div class="profession"><?= $education->degree ?> <span><?= $education->school ?></span></div>
                     <div class="description"><?= $education->description ?></div>
                 </div>
@@ -166,20 +192,25 @@ $educaitons = $educationc->getData('educations');
     </div>
     <div class="skillset">
 
-        <div class="skill">
-            <ul class="skill-text-no">
-                <li class="skill-field">HTMl</li>
-                <li class="skill-percent">80%</li>
-            </ul>
-            <div class="percent-bar">
-                <div class="gray-bar">
-                    width: 80%;
-                    <div class="coloured-bar" style="background:red; width:80%"></div>
-                </div>
+        <?php
+        foreach ($skills as $skill) {
+        ?>
+            <div class="skill">
+                <ul class="skill-text-no">
+                    <li class="skill-field"><?= $skill->skill ?></li>
+                    <li class="skill-percent"><?= $skill->confidence ?>%</li>
+                </ul>
+                <div class="percent-bar">
+                    <div class="gray-bar">
+                        <div class="coloured-bar" style="background: <?= $skill->color ?>; width: <?= $skill->confidence ?>%"></div>
+                    </div>
 
+                </div>
             </div>
-        </div>
-        <div class="skill">
+        <?php
+        }
+        ?>
+        <!-- <div class="skill">
             <ul class="skill-text-no">
                 <li class="skill-field">CSS</li>
                 <li class="skill-percent">90%</li>
@@ -234,7 +265,7 @@ $educaitons = $educationc->getData('educations');
                     <div class="coloured-bar" style="background:rgb(241, 20, 94); width:90%;"></div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 
 </html>

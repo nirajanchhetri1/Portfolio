@@ -29,6 +29,11 @@ $result = $db->getData('home_page');
 
     <table>
         <tr>
+            <td colspan="4">
+                <a href="home_page.php">Add</a>
+            </td>
+        </tr>
+        <tr>
             <td>Name</td>
             <td>Profession</td>
             <td>Detail</td>

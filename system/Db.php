@@ -12,14 +12,28 @@ class Db
     $this->conn = $pdo;
   }
 
-  public function query($sql, $data)
+  public function getConnection()
+  {
+    $dns = 'mysql:host=localhost;dbname=portfolio';
+    $pdo = new PDO($dns, 'root', '');
+    $pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+    return $pdo;
+  }
+
+  public function query($sql, $data, $fetch = false, $single = false)
   {
     $stmt = $this->conn->prepare($sql);
-    if ($stmt->execute($data))
+    $result = $stmt->execute($data);
+
+    if ($fetch)
+      return isset($single) ? $this->fetchSingle($result) : $this->fetchAll($result);
+
+    if ($result)
       return true;
     else
       return false;
   }
+
 
 
   public function create($table, $data)

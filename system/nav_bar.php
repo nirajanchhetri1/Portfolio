@@ -15,7 +15,13 @@
     <a href="contact.php">Contact</a>
   </li>
   <li>
+    <a href="experiences.php">Experiences</a>
+  </li>
+  <li>
     <a href="cvs.php">CV</a>
+  </li>
+  <li>
+    <a href="skills.php">Skills</a>
   </li>
   <li>
     <a href="educations.php">Educations</a>

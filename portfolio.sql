@@ -11,7 +11,7 @@
  Target Server Version : 100419
  File Encoding         : 65001
 
- Date: 25/06/2021 10:09:16
+ Date: 25/06/2021 12:04:42
 */
 
 SET NAMES utf8mb4;
@@ -35,12 +35,11 @@ CREATE TABLE `about`  (
   `email` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of about
 -- ----------------------------
-INSERT INTO `about` VALUES (1, 'Nirajan', 'che', '2021-06-24', 'fasd', 'fd', 'kathmandu', 1, 'gfdg', '9846562256', 'nirajanchhetri6@gmail.com', '1624529834.png');
 
 -- ----------------------------
 -- Table structure for blogs
@@ -80,12 +79,12 @@ CREATE TABLE `contacts`  (
 -- ----------------------------
 DROP TABLE IF EXISTS `cvs`;
 CREATE TABLE `cvs`  (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `status` enum('active','inactive') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `file` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of cvs
@@ -103,15 +102,29 @@ CREATE TABLE `educations`  (
   `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL,
   `school` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of educations
 -- ----------------------------
-INSERT INTO `educations` VALUES (3, 'Slc', '2021-06-07', '2021-06-17', 'fasdfasd', 'abc');
-INSERT INTO `educations` VALUES (4, '+2', '2021-06-16', '2021-06-26', 'fsdfsad', 'xyz');
-INSERT INTO `educations` VALUES (5, 'Bachelor', '2021-06-16', '2021-06-10', 'fasdf', NULL);
-INSERT INTO `educations` VALUES (6, 'fsadf', '2021-06-08', '2021-07-01', 'fasdfsad', 'fsadfsadfasdfasd');
+
+-- ----------------------------
+-- Table structure for experiences
+-- ----------------------------
+DROP TABLE IF EXISTS `experiences`;
+CREATE TABLE `experiences`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `position` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `start_date` date NULL DEFAULT NULL,
+  `end_date` date NULL DEFAULT NULL,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL,
+  `company` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of experiences
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for home_page
@@ -171,6 +184,22 @@ CREATE TABLE `portfolio`  (
 
 -- ----------------------------
 -- Records of portfolio
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for skills
+-- ----------------------------
+DROP TABLE IF EXISTS `skills`;
+CREATE TABLE `skills`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `skill` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `confidence` int(255) NULL DEFAULT 100,
+  `color` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of skills
 -- ----------------------------
 
 -- ----------------------------

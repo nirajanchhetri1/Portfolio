@@ -1,16 +1,19 @@
 <?php
 require_once 'system/Db.php';
+require_once 'system/CvController.php';
 
-$db=new Db();
+$db = new Db();
+$cvC = new CvController();
+$cv = $cvC->getCv();
 
-$result=$db->getData('home_page',null,null,1);
-$data=array();
-foreach($result as $newData){
-    $data=[
-        'name'=>$newData->name,
-        'profession'=>$newData->profession,
-        'detail'=>$newData->detail,
-        'image'=>$newData->image
+$result = $db->getData('home_page', null, null, 1);
+$data = array();
+foreach ($result as $newData) {
+    $data = [
+        'name' => $newData->name,
+        'profession' => $newData->profession,
+        'detail' => $newData->detail,
+        'image' => $newData->image
     ];
 }
 
@@ -25,7 +28,7 @@ foreach($result as $newData){
     <title>protfolio_site</title>
     <link rel="stylesheet" href="assets/css/nav.css">
     <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
@@ -46,24 +49,37 @@ foreach($result as $newData){
         <div class="left">
             <div class="tag-content">
                 <p>
-                    I'M <span class="orange-text"><?= count($data)>0? $data['name']:''?> </span>
+                    I'M <span class="orange-text"><?= count($data) > 0 ? $data['name'] : '' ?> </span>
 
                 </p>
                 <p class="margin-top">
-                    <span class="orange-text">A </span> <?= count($data)>0? $data['profession']:''?>  |
+                    <span class="orange-text">A </span> <?= count($data) > 0 ? $data['profession'] : '' ?> |
 
                 </p>
                 <p class="small-text">
                     <!-- In a professional context it often happens that private<br>
                     clients corder a publication to be made. -->
-                    <?= count($data)>0? $data['detail']:''?> 
+                    <?= count($data) > 0 ? $data['detail'] : '' ?>
                 </p>
             </div>
             <div class="button">
-                <div class="cv-button">
+
+                <?php
+                if (count((array) $cv) > 0) {
+                ?>
+                    <div class="cv-button">
+                        <a href="download.php?file=<?= $cv->id ?>">Download CV</a>
+
+                        <!-- </li> -->
+                    </div>
+                <?php
+
+                }
+                ?>
+                <!-- <div class="cv-button">
                     Download CV
 
-                </div>
+                </div> -->
                 <div class="follow">
 
                     Follow Me
@@ -73,7 +89,7 @@ foreach($result as $newData){
                         <a href=""><i class="fa fa-instagram my" style="font-size:14px;"></i></a>
                     </div>
 
-                   
+
 
                 </div>
             </div>
@@ -81,7 +97,7 @@ foreach($result as $newData){
 
         <div class="right">
             <div class="home-img">
-                <img src="<?= count($data)>0? './images/'. $data['image'] :''?>" alt="" width="200">
+                <img src="<?= count($data) > 0 ? './images/' . $data['image'] : '' ?>" alt="" width="200">
 
             </div>
 
