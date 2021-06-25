@@ -5,9 +5,11 @@ if (isset($_GET['file']) && !empty($_GET['file'])) {
   $file = $_GET['file'];
   $cvC = new CvController();
   $result = $cvC->getWhereData('cvs', ['id' => $file], ['file'], true);
+
   if ($result) {
     $exist_file = $result->file;
     $filePath = './images/cvs/' . $exist_file;
+
     if (!empty($exist_file) && file_exists($filePath)) {
       header('Cache-Control: public');
       header("Content-Description: File Transfer");
@@ -18,7 +20,7 @@ if (isset($_GET['file']) && !empty($_GET['file'])) {
       readfile($filePath);
       $message = "Successfull";
     } else {
-      $message = "Something went wrong. Please try again later.";
+      $message = "Something went wrong. Please try again later. ffasfd";
     }
   } else {
     $message = "Something went wrong. Please try again later.";
@@ -37,7 +39,7 @@ if (isset($_GET['file']) && !empty($_GET['file'])) {
 </head>
 
 <body>
-
+  <?php require_once 'nav_bar.php'; ?>
   <?php
   if (isset($message)) {
   ?>

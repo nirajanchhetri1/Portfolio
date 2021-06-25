@@ -35,11 +35,10 @@ class CvController extends Db
     $file_name = $_FILES['cv_file']['name'];
     $file_tmp = $_FILES['cv_file']['tmp_name'];
     $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
-
+    $directory = mkdir('../images/cvs/');
     //   $extensions= array("jpeg","jpg","png");
-
     $new_name = time() . '.' . $file_ext;
-    if (move_uploaded_file($file_tmp, "./../images/cvs/" . $new_name)) {
+    if (move_uploaded_file($file_tmp, "../images/cvs/" . $new_name)) {
       return $new_name;
     } else {
       return 'error';

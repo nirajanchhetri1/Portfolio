@@ -37,14 +37,10 @@ foreach ($result as $newData) {
 </head>
 
 <body>
-    <nav>
-        <div>
-            <p class="logo-text">Sabi<span class="orange-text">ta</span></p>
-        </div>
 
-        <?php require_once 'nav_bar.php'; ?>
+    <?php require_once 'nav_bar.php'; ?>
 
-    </nav>
+
     <section id="hero">
         <div class="left">
             <div class="tag-content">

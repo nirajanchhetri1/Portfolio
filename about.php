@@ -37,13 +37,7 @@ $skills = $skillC->getData('skills');
 </head>
 
 <body>
-    <nav>
-        <div>
-            <p class="logo-text"> Sabi<span class="orange-text">ta</span></p>
-
-        </div>
-        <?= require_once './nav_bar.php' ?>
-    </nav>
+    <?php require_once 'nav_bar.php'; ?>
 
     <div class="about-info">
         <div class="about-image">
@@ -101,7 +95,7 @@ $skills = $skillC->getData('skills');
         <ul class="info-right">
             <li>
                 <p>Freelance</p>
-                <p><?= isset($result) ? $result->frelance : '' ?></p>
+                <p><?= isset($result) && $result->frelance == 1 ? 'Available' : 'Unavailabel' ?></p>
                 <!-- First Name <span>Sabita</span> -->
             </li>
             <li>

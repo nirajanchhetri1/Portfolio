@@ -94,7 +94,7 @@ class HomePageController extends Db
         $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
 
         //   $extensions= array("jpeg","jpg","png");
-
+        mkdir('../images/');
         $new_name = time() . '.' . $file_ext;
         if (move_uploaded_file($file_tmp, "./../images/" . $new_name)) {
             return $new_name;

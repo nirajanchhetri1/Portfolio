@@ -30,15 +30,7 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
 </head>
 
 <body>
-    <nav>
-        <div>
-            <p class="logo-text"> Sabi<span class="orange-text">ta</span></p>
-
-        </div>
-
-        <?php require_once 'nav_bar.php'; ?>
-
-    </nav>
+    <?php require_once 'nav_bar.php'; ?>
 
     <section id="card">
         <div class="center">

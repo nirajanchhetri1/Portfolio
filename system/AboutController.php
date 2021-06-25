@@ -70,7 +70,7 @@ class AboutController extends Db
 
         if (isset($_FILES['image']) && !empty($_FILES['image']['name'])) {
             $image = $this->uploadImage();
-            
+
             $about = $this->getWhereData('about', ['id' => $id], ['image'], true);
             if ($image != 'error' && $about) {
                 $old_img = $about->image;
@@ -101,7 +101,7 @@ class AboutController extends Db
         $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
 
         //   $extensions= array("jpeg","jpg","png");
-
+        $directory = mkdir('../images/about/');
         $new_name = time() . '.' . $file_ext;
         if (move_uploaded_file($file_tmp, "./../images/about/" . $new_name)) {
             return $new_name;
