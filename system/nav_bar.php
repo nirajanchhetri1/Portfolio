@@ -29,4 +29,7 @@
   <li>
     <a href="about.php">About</a>
   </li>
+  <li>
+    <a href="namelogo.php">Nav Logo</a>
+  </li>
 </ul>

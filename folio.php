@@ -23,15 +23,8 @@ $result = $portfolio->all();
 </head>
 
 <body>
-    <nav>
-        <div>
-            <p class="logo-text"> Sabi<span class="orange-text">ta</span></p>
+    <?php require_once 'nav_bar.php'; ?>
 
-        </div>
-
-        <?php require_once 'nav_bar.php'; ?>
-
-    </nav>
     <section id="card">
         <div class="center">
 

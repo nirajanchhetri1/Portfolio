@@ -36,15 +36,7 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'SEND MESSAGE') {
 </head>
 
 <body>
-    <nav>
-        <div>
-            <p class="logo-text"> Sabi<span class="orange-text">ta</span></p>
-
-        </div>
-
-        <?php require_once 'nav_bar.php'; ?>
-
-    </nav>
+    <?php require_once 'nav_bar.php'; ?>
 
     <div class="Contact-center">
 

@@ -22,15 +22,9 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
 </head>
 
 <body>
-    <nav>
-        <div>
-            <p class="logo-text"> Sabi<span class="orange-text">ta</span></p>
+    <?php require_once 'nav_bar.php'; ?>
 
-        </div>
 
-        <?php require_once 'nav_bar.php'; ?>
-
-    </nav>
     <div class="blog-details">
         <p>
             My &nbsp;<span class="orange-text">blogs</span>

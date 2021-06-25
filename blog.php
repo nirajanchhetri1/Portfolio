@@ -21,14 +21,8 @@ $blogs = $blogc->getData('blogs');
 </head>
 
 <body>
-    <nav>
-        <div>
-            <p class="logo-text"> Sabi<span class="orange-text">ta</span></p>
+    <?php require_once 'nav_bar.php'; ?>
 
-        </div>
-
-        <?php require_once './nav_bar.php' ?>
-    </nav>
     <div class="my-blogs">
         <p>
             My &nbsp;<span class="orange-text">blogs</span>
