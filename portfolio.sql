@@ -11,7 +11,7 @@
  Target Server Version : 100419
  File Encoding         : 65001
 
- Date: 25/06/2021 12:04:42
+ Date: 25/06/2021 13:38:14
 */
 
 SET NAMES utf8mb4;
@@ -148,6 +148,21 @@ CREATE TABLE `home_page`  (
 
 -- ----------------------------
 -- Records of home_page
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for name_logo
+-- ----------------------------
+DROP TABLE IF EXISTS `name_logo`;
+CREATE TABLE `name_logo`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `status` enum('active','inactive') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of name_logo
 -- ----------------------------
 
 -- ----------------------------
