@@ -1,5 +1,6 @@
+
 body {
-    background-color: #FCFCFC;
+    background-color: #F6F6F6;
 }
 
 /* ---------------------------------------
@@ -16,31 +17,27 @@ body {
     /* padding-top */
 }
 .tag-content {
-    margin-top: 15%;
+    margin-top: 4%;
     padding: 12px;
-}
-
-.follow .social-icons:first-child {
-    /* font-size: ; */
 }
 
 .tag-content p {
     /* padding: 0px 24px; */
     font-weight: bold;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Lato', sans-serif;
     font-size: 300%;
 }
 
 .margin-top {
-    margin-top: -5%;
-    padding:34px 0px;
+    margin-top: -8%;
+    padding:39px 0px;
 }
 
 p.small-text {
     font-size: 150%;
     font-weight: normal;
-    /* margin-top: -5%; */
-    font-family: 'Roboto', sans-serif;
+    margin-top: -5%;
+    font-family: 'Lato', sans-serif;
     word-wrap: break-word;
 }
 
@@ -48,8 +45,15 @@ p.small-text {
     display: flex;
     justify-content: flex-start;
     /* padding: 0px 24px; */
-    margin-top: 6%;
-    margin-right: 25%;
+    margin-top: 0%;
+    /* margin-left: 5%; */
+    font-family: 'Lato';
+}
+
+@media (min-width:767px){
+    .button{
+        margin-left: 2%;
+    } 
 }
 
 .cv-button, .follow {
@@ -118,9 +122,10 @@ i.fa-linkedin-in:hover {
 
 i.fa-instagram:hover {
     cursor: pointer;
-    background: linear-gradient(to right, #DD2A7B, #8134AF);
+    /* background: linear-gradient(to right, #DD2A7B, #8134AF);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: transparent; */
+    color: purple;
 }
 
 .social-icons {
@@ -135,6 +140,18 @@ i.fa-instagram:hover {
 
 .view_mobile{
     display: none;
+}
+
+.my-break{
+    display:none;
+}
+
+.follow p{
+    display: inline;
+}
+
+.show_in_mobile{
+    display:none;
 }
 
 
@@ -157,6 +174,7 @@ i.fa-instagram:hover {
         border-radius: 50%;
         margin-top: 10%;
         box-shadow: 0 8px 30px -7px #505152;
+        margin: 0 auto;
     }
 
     .view_mobile{
@@ -178,17 +196,41 @@ i.fa-instagram:hover {
         font-size: 150%;
         font-weight: normal;
         /* margin-top: -5%; */
-        font-family: 'Roboto', sans-serif;
+        font-family: 'Lato', sans-serif;
         word-wrap: break-word;
         padding-top: 38px;
     }
 
     .button {
-        display: flex;
-        justify-content: flex-start;
-        /* padding: 0px 24px; */
+        display: block;
         margin-top: 6%;
         margin-right: 0%;
+        text-align: center;
+        font-size: 100%;
+        margin: 0 auto;
+    }
+
+    .my-break{
+        display: block;
+    }
+
+    .cv-button,.follow{
+        width: 50vw;
+        margin:0 auto;
+    }
+
+    .social-icons {
+        top: -3%;
+    }
+
+    .follow p{
+        display: none;
+    }
+
+    .show_in_mobile{
+        display: block;
+        min-height: 6px;
+        max-height: 0px;
     }
     
 }

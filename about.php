@@ -95,11 +95,7 @@ $skills = $skillC->getData('skills');
         <ul class="info-right">
             <li>
                 <p>Freelance</p>
-<<<<<<< HEAD
-                <p><?= isset($result) && $result->frelance==1 ? 'Available': 'Unavailable' ?></p>
-=======
-                <p><?= isset($result) && $result->frelance == 1 ? 'Available' : 'Unavailabel' ?></p>
->>>>>>> 6c3afbbadafc1c51e03f54ecd119d9cb040f3bbb
+                <p><?= isset($result) && $result->frelance == 1 ? 'Available' : 'Unavailable' ?></p>
                 <!-- First Name <span>Sabita</span> -->
             </li>
             <li>
@@ -117,6 +113,20 @@ $skills = $skillC->getData('skills');
                 <p><?= isset($result) ? $result->email : '' ?></p>
                 <!-- Nationality <span>Nepali</span> -->
             </li>
+
+            <?php
+
+            if (count((array) $cv) > 0) {
+            ?>
+                <div class="cv-button-mobile">
+                    <a href="download.php?file=<?= $cv->id ?>">Download CV</a>
+
+                    <!-- </li> -->
+                </div>
+            <?php
+
+            }
+            ?>
         </ul>
         <!-- </div> -->
 

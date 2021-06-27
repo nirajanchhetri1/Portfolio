@@ -1,6 +1,7 @@
 <?php
 require_once 'system/Db.php';
 require_once 'system/CvController.php';
+require_once 'function.php';
 
 $db = new Db();
 $cvC = new CvController();
@@ -34,16 +35,14 @@ foreach ($result as $newData) {
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Roboto:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
-<<<<<<< HEAD
-    <nav>
-        <div class="logo-nav">
-            <p class="logo-text">Sabi<span class="orange-text">ta</span></p>
-        </div>
-=======
->>>>>>> 6c3afbbadafc1c51e03f54ecd119d9cb040f3bbb
 
     <?php require_once 'nav_bar.php'; ?>
 
@@ -56,7 +55,7 @@ foreach ($result as $newData) {
 
                 </p>
                 <p class="margin-top">
-                    <span class="orange-text">A </span> <?= count($data) > 0 ? $data['profession'] : '' ?> |
+                    <span class="orange-text"><?= convertAAn(substr($data['profession'], 0, 1)) ?> </span> <?= count($data) > 0 ? $data['profession'] : '' ?> |
                 </p>
 
                 <img src="<?= count($data) > 0 ? './images/' . $data['image'] : '' ?>" alt="" width="50" class="view_mobile">
@@ -83,11 +82,13 @@ foreach ($result as $newData) {
                 ?>
                 <!-- <div class="cv-button">
                     Download CV
-
                 </div> -->
-                <div class="follow">
+                <p class="show_in_mobile"></p>
 
-                    Follow Me
+                <div class="follow">
+                    <p>
+                        Follow Me
+                    </p>
                     <div class="social-icons">
                         <a href=""><i class="fab fa-facebook-f my" style="font-size:13px;"></i></a>
                         <a href=""><i class="fab fa-linkedin-in my" style="font-size:14px;"></i></a>

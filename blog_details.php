@@ -38,18 +38,18 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
             <img src="./images/blogs/<?= $blog->image ?>" alt="" class="src">
 
             <div class="black-overlay">
-
-            </div>
             <div class="info-list">
                 <ul>
                     <li>
 
-                        <i class="fas fa-calendar-alt" style="font-size:13px; color:orange;"></i>
+                        <i class="fas fa-calendar-alt" style="font-size:100%;"></i>
 
                         <?= isset($blog->created_at) ? date('d F Y') : '' ?>
                     </li>
                 </ul>
             </div>
+            </div>
+           
         </div>
 
         <div class="blogdetail-content">

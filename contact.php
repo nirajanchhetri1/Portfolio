@@ -59,71 +59,92 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'SEND MESSAGE') {
     </div>
     <div class="contact-lower">
         <div class="contact-details">
-            <ul>
 
-                <?php if (isset($result) && isset($result->contact)) : ?>
-                    <li>
-                        <p>Contact</p>
-                        <!-- <i class="fab fa-facebook-f" style="font-size:13px; color:orange;"></i>i -->
-                        <i class="fas fa-envelope"></i>
-                        <?= $result->contact ?>
-                    </li>
-                <?php endif; ?>
-                <?php if (isset($result) && isset($result->email)) : ?>
-                    <li>
-                        <p>Email</p>
-                        <!-- <i class="fab fa-facebook-f" style="font-size:13px; color:orange;"></i>i -->
-                        <i class="fas fa-envelope"></i>
-                        <?= $result->email ?>
-                    </li>
-                <?php endif; ?>
+            <table>
+                <tbody>
 
-                <?php if (isset($result) && isset($result->instagram)) : ?>
-                    <li>
-                        <p>Instagram</p>
-                        <!-- <i class="fab fa-facebook-f" style="font-size:13px; color:orange;"></i>i -->
-                        <i class="fab fa-instagram"></i>
-                        <?= $result->instagram ?>
-                    </li>
-                <?php endif; ?>
+                    <?php if (isset($result) && isset($result->contact)) : ?>
+                        <tr class="first-tr">
+                            <td></td>
+                            <td class="contact-heading my-padding">Contact</td>
+                        </tr>
+                        <tr>
+                            <td class="bg-circle"><i class="fas fa-phone-alt"></i></td>
+                            <td class="my-padding"><?= $result->contact ?></td>
+                        </tr>
+                        <tr class="ht-15"></tr>
+                    <?php endif; ?>
 
-                <?php if (isset($result) && isset($result->linkedin)) : ?>
-                    <li>
-                        <p>Linkedin</p>
-                        <!-- <i class="fab fa-facebook-f" style="font-size:13px; color:orange;"></i>i -->
-                        <i class="fab fa-linkedin-in"></i>
-                        <?= $result->linkedin ?>
-                    </li>
-                <?php endif; ?>
-                <!-- <li>
-            <p>Phone</p>
-                    <!-- <i class="fab fa-facebook-f" style="font-size:13px; color:orange;"></i>i -->
-                <!-- <i class="fas fa-phone"></i> -->
-                <!-- 9846562256
-                </li> -->
-                <?php if (isset($result) && isset($result->twitter)) : ?>
-                    <li>
-                        <p>Twitter </p>
-                        <i class="fab fa-twitter"></i>
-                        <?= $result->twitter ?>
+                    <?php if (isset($result) && isset($result->email)) : ?>
+                        <tr class="first-tr">
+                            <td></td>
+                            <td class="contact-heading my-padding">Email</td>
+                        </tr>
+                        <tr>
+                            <td class="bg-circle"><i class="far fa-envelope"><span style="color:black;"></i></td>
+                            <td class="my-padding"><?= $result->email ?></td>
+                        </tr>
+                        <tr class="ht-15"></tr>
+                    <?php endif; ?>
+                    <?php if (isset($result) && isset($result->instagram)) : ?>
+                        <tr class="first-tr">
+                            <td></td>
+                            <td class="contact-heading my-padding">Instagram</td>
+                        </tr>
+                        <tr>
+                            <td class="bg-circle"><i class="fab fa-instagram"></i></td>
+                            <td class="my-padding"><?= $result->instagram ?></td>
+                        </tr>
+                        <tr class="ht-15"></tr>
+                    <?php endif; ?>
+                    <?php if (isset($result) && isset($result->linkedin)) : ?>
+                        <tr class="first-tr">
+                            <td></td>
+                            <td class="contact-heading my-padding">Linkedin</td>
+                        </tr>
+                        <tr>
+                            <td class="bg-circle"><i class="fab fa-linkedin-in"></i></td>
+                            <td class="my-padding"><?= $result->linkedin ?></td>
+                        </tr>
+                        <tr class="ht-15"></tr>
+                    <?php endif; ?>
+                    <?php if (isset($result) && isset($result->twitter)) : ?>
+                        <tr class="first-tr">
+                            <td></td>
+                            <td class="contact-heading my-padding">Twitter</td>
+                        </tr>
+                        <tr>
+                            <td class="bg-circle"><i class="fab fa-twitter"><span style="color:black;"></i></td>
+                            <td class="my-padding"><?= $result->twitter ?></td>
+                        </tr>
+                        <tr class="ht-15"></tr>
+                        <tr class="ht-15"></tr>
+                    <?php endif; ?>
 
-                    </li>
-                <?php endif; ?>
-                <div class="follow" style="width: fit-content; margin-top: 12px;">
-                    <li>
+                </tbody>
 
+            </table>
+
+            <div class="follow mr-left-15">
+                    <p>
                         Follow Me
-                        <div class="social-icons">
-                            <a href=""><i class="fab fa-facebook-f my" style="font-size:13px;"></i></a>
-                            <a href=""><i class="fab fa-linkedin-in my" style="font-size:14px;"></i></a>
-                            <a href=""><i class="fa fa-instagram my" style="font-size:14px;"></i></a>
-                        </div>
+                    </p>
+                    <div class="social-icons">
+                        <a href=""><i class="fab fa-facebook-f my" style="font-size:13px;"></i></a>
+                        <a href=""><i class="fab fa-linkedin-in my" style="font-size:14px;"></i></a>
+                        <a href=""><i class="fab fa-instagram my" style="font-size:14px;"></i></a>
+                    </div>
+
+
+
                 </div>
-            </ul>
+
 
 
 
         </div>
+
+
         <div class="contactright-content">
             <p>
                 <?= isset($contactDescription) && isset($contactDescription->extra_description) ? $contactDescription->extra_description : '' ?>
@@ -131,10 +152,12 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'SEND MESSAGE') {
             <?php
             if (isset($message)) {
             ?>
-                <p><?= $message ?></p>
+                <p class="thankyou-message"><?= $message ?></p>
             <?php
             }
             ?>
+
+            <?php if(!isset($message)){ ?>
             <form action="" method="POST">
                 <input type="text" name="name" id="your_name" placeholder="YOUR NAME" class="form-field">
                 <input type="text" name="email" id="your_email" placeholder="YOUR EMAIL" class="form-field">
@@ -142,5 +165,6 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'SEND MESSAGE') {
 
                 <input type="submit" name="submit" value="SEND MESSAGE" class="contact-form-btn">
             </form>
+            <?php } ?>
         </div>
     </div>

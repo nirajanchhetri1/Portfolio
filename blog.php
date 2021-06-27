@@ -44,7 +44,7 @@ $blogs = $blogc->getData('blogs');
                     </p>
                 </div>
                 <div class="blog-content">
-                    <?= substr($blog->description, 0, 150); ?>
+                    <?= substr($blog->description, 0, 75); ?>
                 </div>
                 <div class="readmore-btn">
                     <a href="blog_details.php?id=<?= $blog->id ?>">

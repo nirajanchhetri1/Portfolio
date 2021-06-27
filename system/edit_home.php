@@ -53,7 +53,7 @@ if(isset($_GET['id'])&&$_GET['id']>0){
         </tr>
         <tr>
             <td>Contact</td>
-            <td><input type="number" name="contact" id="contact" value="<?= isset($selectedData)? $selectedData->contact:''?>"/></td>
+            <td><input type="number" name="contact" id="contact" value="<?= isset($selectedData)? $selectedData->contact:' '?>"/></td>
         </tr>
        
         <tr>

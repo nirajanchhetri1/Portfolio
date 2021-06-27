@@ -100,7 +100,7 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
 
     </section>
     <section id="preview-page">
-        <div class="overlay">
+        <div class="overlay" onclick="hide_modal()">
 
         </div>
         <div class="overlay-box">
