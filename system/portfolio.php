@@ -39,7 +39,8 @@ $result = $c->all();
                 <td><?= $row->budget; ?></td>
                 <td><?= $row->duration ?></td>
                 <td>
-                    <a href="">Edit</a>
+                    <a href="edit_portfolio.php?id=<?= $row->id ?>">Edit</a>
+                    <a onclick="return confirm('Are you sure?')" href="delete_portfolio.php?id=<?= $row->id ?>">Delete</a>
                 </td>
 
             </tr>

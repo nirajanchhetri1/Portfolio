@@ -91,15 +91,15 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
 
             </div>
             <div class="foliopreview-button">
-                <button href="" class="preview-btn" onclick="show_modal()">
+                <a href="<?= $reuslt->preview ?>" target="_blank" class="preview-btn" onclick="show_modal()">
                     Preview
-                </button>
+                </a>
 
             </div>
 
 
     </section>
-    <section id="preview-page">
+    <!-- <section id="preview-page">
         <div class="overlay" onclick="hide_modal()">
 
         </div>
@@ -108,21 +108,21 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
             <img src="./images/portfolio/<?= $reuslt->image ?>" alt="" class="src">
 
         </div>
-    </section>
+    </section> -->
 
 <?php
         }
 ?>
 <script>
-    function show_modal() {
-        document.getElementsByClassName('overlay-box')[0].style.display = "block";
-        document.getElementsByClassName('overlay')[0].style.display = "block";
-    }
+    // function show_modal() {
+    //     document.getElementsByClassName('overlay-box')[0].style.display = "block";
+    //     document.getElementsByClassName('overlay')[0].style.display = "block";
+    // }
 
-    function hide_modal() {
-        document.getElementsByClassName('overlay-box')[0].style.display = "none";
-        document.getElementsByClassName('overlay')[0].style.display = "none";
-    }
+    // function hide_modal() {
+    //     document.getElementsByClassName('overlay-box')[0].style.display = "none";
+    //     document.getElementsByClassName('overlay')[0].style.display = "none";
+    // }
 </script>
 </body>
 

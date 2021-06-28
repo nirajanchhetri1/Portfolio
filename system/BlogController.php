@@ -55,7 +55,26 @@ class BlogController extends Db
         }
     }
 
+    public function deleteData($id)
+    {
+        $portfolio = $this->getWhereData('blogs', ['id' => $id], ['image'], true);
 
+
+        $sql = 'DELETE FROM blogs  WHERE id = :id';
+        $data['id'] = $id;
+        $updated = $this->query($sql, $data);
+
+        if ($updated == true) {
+            if ($portfolio) {
+                $old_img = $portfolio->image;
+                $path = '../images/blogs/';
+                if (file_exists($path . $old_img)) {
+                    @unlink($path . $old_img);
+                }
+            }
+            header('location: blog.php');
+        }
+    }
     private function uploadImage()
     {
         $file_name = $_FILES['image']['name'];

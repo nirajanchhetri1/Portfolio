@@ -64,6 +64,12 @@ if (isset($_POST['submit']) && $_POST['submit'] && $_POST['submit'] == 'Submit')
                 </td>
             </tr>
             <tr>
+                <td>Preview Link</td>
+                <td>
+                    <input type="text" name="preview" id="preview" />
+                </td>
+            </tr>
+            <tr>
                 <td>Image</td>
                 <td>
                     <input type="file" name="image" id="image">

@@ -34,6 +34,7 @@ $blogs = $blogCon->getData('blogs');
                 <td><?= $blog->title ?></td>
                 <td>
                     <a href="edit_blog.php?id=<?= $blog->id ?>">Edit</a>
+                    <a onclick="return confirm('Are you sure')" href="delete_blog.php?id=<?= $blog->id ?>">Delete</a>
                 </td>
             </tr>
         <?php
