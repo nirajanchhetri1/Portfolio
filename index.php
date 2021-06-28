@@ -21,7 +21,6 @@ foreach ($result as $newData) {
 // Initialize cookie name
 $cookie_name = "data";
 $cookie_value = $data["profession"];
-
 // Set cookie
 setcookie($cookie_name, $cookie_value);
 
@@ -65,10 +64,10 @@ setcookie($cookie_name, $cookie_value);
                     I'M <span class="orange-text"><?= count($data) > 0 ? $data['name'] : '' ?> </span>
 
                 </p>
-                <p  class="margin-top">
+                <p class="margin-top">
                     <span class="orange-text"><?= convertAAn(substr($data['profession'], 0, 1)) ?> </span> <span id="myText"> </span>
 
-                <img src="<?= count($data) > 0 ? './images/' . $data['image'] : '' ?>" alt="" width="50" class="view_mobile">
+                    <img src="<?= count($data) > 0 ? './images/' . $data['image'] : '' ?>" alt="" width="50" class="view_mobile">
 
                 <p class="small-text">
                     <!-- In a professional context it often happens that private<br>
@@ -126,9 +125,9 @@ setcookie($cookie_name, $cookie_value);
         var text = document.getElementById("myText");
 
         var x = document.cookie;
-        console.log(x);
+        // console.log(x);
 
-       
+
         function checkCookie() {
             // Get cookie using our custom function
             var myData = getCookie(x);
@@ -148,21 +147,19 @@ setcookie($cookie_name, $cookie_value);
         function getCookie() {
             // Split cookie string and get all individual name=value pairs in an array
             var cookieArr = document.cookie.split(";");
-            console.log(cookieArr);
+
+
             // Loop through the array elements
             for (var i = 0; i < cookieArr.length; i++) {
                 var cookiePair = cookieArr[i].split("=");
-                if(cookiePair[0]='data'){
-                    // console.log(decodeURIComponent(cookiePair[1]));
-                    myCookiePair = cookiePair[1].split('+').join(' ');;
-                    // console.log('myCookiePair:', myCookiePair);
+                if (cookiePair[0] == ' data') {
+                    myCookiePair = cookiePair[1].split('+').join(' ');
                     return decodeURIComponent(myCookiePair);
                 }
 
-                // if (name == cookiePair[0].trim()) {
-                //     return decodeURIComponent(cookiePair[1]);
-                //     console.log(cookiePair[0]);
-                // }
+                if (name == cookiePair[0].trim()) {
+                    return decodeURIComponent(cookiePair[1]);
+                }
             }
             return null;
         }

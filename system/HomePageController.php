@@ -16,6 +16,9 @@ class HomePageController extends Db
         $instagram = $_POST['instagram'];
         $linkedin = $_POST['linkedin'];
         $twitter = $_POST['twitter'];
+        $youtube = $_POST['youtube'];
+        $git = $_POST['git'];
+
         $data = ['name' => $name, 'profession' => $profession, 'detail' => $detail, 'status' => 'active'];
 
         $data['contact'] = isset($contact) && !empty($contact) ? $contact : null;
@@ -24,6 +27,9 @@ class HomePageController extends Db
         $data['instagram'] = isset($instagram) && !empty($instagram) ? $instagram : null;
         $data['linkedin'] = isset($linkedin) && !empty($linkedin) ? $linkedin : null;
         $data['twitter'] = isset($twitter) && !empty($twitter) ? $twitter : null;
+        $data['youtube'] = isset($youtube) && !empty($youtube) ? $youtube : null;
+        $data['git'] = isset($git) && !empty($git) ? $git : null;
+
         return  $this->create('home_page', $data);
     }
 
@@ -40,6 +46,8 @@ class HomePageController extends Db
         $instagram = $_POST['instagram'];
         $linkedin = $_POST['linkedin'];
         $twitter = $_POST['twitter'];
+        $youtube = $_POST['youtube'];
+        $git = $_POST['git'];
 
         $sql = 'UPDATE home_page SET name = :name, profession = :profession, detail = :detail';
 
@@ -48,31 +56,65 @@ class HomePageController extends Db
         if (isset($contact) && !empty($contact)) {
             $sql .= ", contact = :contact";
             $udata['contact'] = $contact;
+        } else {
+            $sql .= ", contact = :contact";
+            $udata['contact'] = NULL;
         }
 
         if (isset($email) && !empty($email)) {
             $sql .= ", email = :email";
             $udata['email'] = $email;
+        } else {
+            $sql .= ", email = :email";
+            $udata['email'] = NULL;
         }
 
         if (isset($facebook) && !empty($facebook)) {
             $sql .= ", facebook = :facebook";
             $udata['facebook'] = $facebook;
+        } else {
+            $sql .= ", facebook = :facebook";
+            $udata['facebook'] = NULL;
         }
 
         if (isset($instagram) && !empty($instagram)) {
             $sql .= ", instagram = :instagram";
             $udata['instagram'] = $instagram;
+        } else {
+            $sql .= ", instagram = :instagram";
+            $udata['instagram'] = NULL;
         }
 
         if (isset($linkedin) && !empty($linkedin)) {
             $sql .= ", linkedin = :linkedin";
             $udata['linkedin'] = $linkedin;
+        } else {
+            $sql .= ", linkedin = :linkedin";
+            $udata['linkedin'] = NULL;
         }
 
         if (isset($twitter) && !empty($twitter)) {
             $sql .= ", twitter = :twitter";
             $udata['twitter'] = $twitter;
+        } else {
+            $sql .= ", twitter = :twitter";
+            $udata['twitter'] = NULL;
+        }
+
+        if (isset($youtube) && !empty($youtube)) {
+            $sql .= ", youtube = :youtube";
+            $udata['youtube'] = $youtube;
+        } else {
+            $sql .= ", youtube = :youtube";
+            $udata['youtube'] = NULL;
+        }
+
+        if (isset($git) && !empty($git)) {
+            $sql .= ", git = :git";
+            $udata['git'] = $git;
+        } else {
+            $sql .= ", git = :git";
+            $udata['git'] = NULL;
         }
 
         if (isset($_FILES['image']) && !empty($_FILES['image']['name'])) {
