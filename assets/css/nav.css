@@ -80,7 +80,7 @@ ul li a:hover {
         display:flex !important;
         flex-direction: column;
         position: fixed;
-        background-color: #5e5e5e;
+        background-color: #095592;
         /* background:rgb(100, 100, 100); */
         top: 75px;
         left: 0;
@@ -95,6 +95,7 @@ ul li a:hover {
 
     .nav-right-list ul li{
         border-bottom: 1px solid #ffffff;
+        border-radius: 12px;
     }
 
 

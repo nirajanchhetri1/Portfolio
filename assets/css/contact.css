@@ -55,8 +55,9 @@
 
 .contactright-content p {
     /* padding:6px 2px 0px; */
-    width: 55%;
+    /* width: 55%; */
     padding-bottom: 12px;
+    font-family: 'Lato';
 }
 
 .contact-details ul {
