@@ -7,6 +7,10 @@
     }
 }
 
+.orange-text{
+    color: #2196f3;
+}
+
 .my-cards {
     display: flex;
     flex-wrap: wrap;
@@ -26,7 +30,7 @@
 }
 
 .my-blogs p {
-    border-bottom: 2px solid orange;
+    border-bottom: 2px solid #2196f3;
     width: fit-content;
     text-align: center;
     padding: 12px 12px 12px 3px;
@@ -44,7 +48,7 @@
 .readmore-btn {
     text-decoration: none;
     color: white;
-    background-color: orange;
+    background-color: #2196f3;
     padding: 6px 18px;
     border-radius: 10px;
     font-size: 150%;
@@ -52,7 +56,7 @@
     width: fit-content;
     border: none;
     cursor: pointer;
-    background: rgb(245, 178, 53);
+    background: #2196f3;
 }
 
 .blog-card {
@@ -98,6 +102,7 @@
 .readmore-btn {
     margin: 6px 12px 12px 3px;
     transition: 0.84s all;
+    background: #2196f3;
 }
 
 .readmore-btn  a{
@@ -107,7 +112,7 @@
 
 .readmore-btn:hover {
     cursor: pointer;
-    background-color: rgb(216, 140, 0);
+    background-color: #095592;
     transition: 0.84s all;
 }
 
@@ -119,6 +124,6 @@
 
 @media (max-width:767px){
     nav{
-        display:none !important;
+        /* display:none !important; */
     }
 }

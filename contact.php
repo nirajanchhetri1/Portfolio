@@ -126,18 +126,18 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'SEND MESSAGE') {
             </table>
 
             <div class="follow mr-left-15">
-                    <p>
-                        Follow Me
-                    </p>
-                    <div class="social-icons">
-                        <a href=""><i class="fab fa-facebook-f my" style="font-size:13px;"></i></a>
-                        <a href=""><i class="fab fa-linkedin-in my" style="font-size:14px;"></i></a>
-                        <a href=""><i class="fab fa-instagram my" style="font-size:14px;"></i></a>
-                    </div>
-
-
-
+                <p>
+                    Follow Me
+                </p>
+                <div class="social-icons">
+                    <a href=""><i class="fab fa-facebook-f my" style="font-size:13px;"></i></a>
+                    <a href=""><i class="fab fa-linkedin-in my" style="font-size:14px;"></i></a>
+                    <a href=""><i class="fab fa-instagram my" style="font-size:14px;"></i></a>
                 </div>
+
+
+
+            </div>
 
 
 
@@ -157,14 +157,24 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'SEND MESSAGE') {
             }
             ?>
 
-            <?php if(!isset($message)){ ?>
-            <form action="" method="POST">
-                <input type="text" name="name" id="your_name" placeholder="YOUR NAME" class="form-field">
-                <input type="text" name="email" id="your_email" placeholder="YOUR EMAIL" class="form-field">
-                <textarea name="comment" id="" cols="30" rows="5" placeholder="WRITE YOUR COMMENT HERE" class="form-field"></textarea>
+            <?php if (!isset($message)) { ?>
+                <form action="" method="POST">
+                    <div class="form-div">
+                        <i class="far fa-user"></i>
+                        <input type="text" name="name" id="your_name" placeholder="YOUR NAME" class="form-field">
+                    </div>
 
-                <input type="submit" name="submit" value="SEND MESSAGE" class="contact-form-btn">
-            </form>
+                    <div class="form-div">
+                        <i class="far fa-envelope"></i>
+                        <input type="text" name="email" id="your_email" placeholder="YOUR EMAIL" class="form-field">
+                    </div>
+
+                    <div class="form-div">
+                        <i class="fas fa-comment-dots"></i>
+                        <textarea name="comment" id="" cols="30" rows="5" placeholder="WRITE YOUR COMMENT HERE" class="form-field"></textarea>
+                    </div>
+                    <input type="submit" name="submit" value="SEND MESSAGE" class="contact-form-btn">
+                </form>
             <?php } ?>
         </div>
     </div>

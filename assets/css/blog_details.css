@@ -9,7 +9,7 @@
 }
 
 .blog-details p {
-    border-bottom: 2px solid orange;
+    border-bottom: 2px solid #2196f3;
     width: fit-content;
     text-align: center;
     padding: 12px 12px 12px 3px;
@@ -85,7 +85,7 @@
 
 @media (max-width:767px) {
     nav {
-        display: none !important;
+        /* display: none !important; */
     }
     .blog-detailimg {
         position: relative;

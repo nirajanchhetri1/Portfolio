@@ -3,12 +3,12 @@
     padding: 0;
 }
 
-.orange-text {
-    color: orange;
+#orange-text {
+    color: #2196f3;
 }
 
 ul li a.active {
-    color: orange;
+    color: #2196f3 !important;
 }
 
 .logo-text {
@@ -31,6 +31,11 @@ nav {
     display: flex;
     justify-content: space-between;
     padding: 24px 104px 0px 104px;
+    align-items: center;
+}
+
+div#hamburger-bar{
+    display: none;
 }
 
 nav .logo-text a {
@@ -54,5 +59,43 @@ ul li a {
 
 ul li a:hover {
     cursor: pointer;
-    color: orange;
+    color: #2196f3;
+}
+
+@media (max-width:767px){
+    div#hamburger-bar{
+        display: block;
+    }
+
+    .nav-right-list{
+        display: block;
+    }
+    
+    .nav-right-list ul{
+        display:none;
+    }
+
+    .nav-right-list-ul{
+        width: 100%;
+        display:flex !important;
+        flex-direction: column;
+        position: fixed;
+        background-color: #5e5e5e;
+        /* background:rgb(100, 100, 100); */
+        top: 75px;
+        left: 0;
+        color:#ffffff;
+        text-align: center;
+    }
+
+    .nav-right-list ul li a{
+        color: #ffffff;
+        text-align: center;
+    }
+
+    .nav-right-list ul li{
+        border-bottom: 1px solid #ffffff;
+    }
+
+
 }

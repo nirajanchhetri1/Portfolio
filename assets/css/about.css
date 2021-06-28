@@ -24,7 +24,7 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    border: 4px solid orange;
+    border: 4px solid #2196f3;
     top: 5%;
     left: 5%;
     z-index: -1;
@@ -112,7 +112,7 @@ ul.info-right li p {
 
 .experience p {
     font-family: 'Lato';
-    color: orange;
+    color: #2196f3;
     font-weight: bold;
     font-size: 125%;
     text-align: left;
@@ -140,7 +140,7 @@ ul.info-right li p {
 }
 
 .education p {
-    color: orange;
+    color: #2196f3;
     font-weight: bold;
     font-size: 125%;
     font-family: 'Lato';
@@ -160,7 +160,7 @@ ul.info-right li p {
 }
 
 .experience-list .time, .experience-list .profession span, .education-list .time, .education-list .profession span {
-    color: orange;
+    color: #2196f3;
     font-weight: bold;
 }
 
@@ -172,7 +172,7 @@ ul.info-right li p {
     width: 80%;
     margin-top: 44px;
     margin-left: 14%;
-    color: orange;
+    color: #2196f3;
     font-weight: bold;
     font-size: 125%;
     font-family: 'Lato';
@@ -237,7 +237,7 @@ ul.skill-text-no {
 
 @media (max-width:767px) {
     nav {
-        display: none;
+        /* display: none; */
     }
     .about-image {
         width: 18rem;
@@ -250,7 +250,7 @@ ul.skill-text-no {
     }
     .cv-button-mobile {
         display: block;
-        background-color: orange;
+        background-color: #2196f3;
         padding: 12px 18px;
         border-radius: 10px;
         color: white;
@@ -260,7 +260,7 @@ ul.skill-text-no {
         margin-left: 10%;
     }
     .cv-button-mobile:hover {
-        background-color: rgb(163, 107, 2);
+        background-color: #095592;
     }
     .cv-button-mobile a {
         color: #ffffff;
