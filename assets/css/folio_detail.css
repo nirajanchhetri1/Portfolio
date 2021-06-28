@@ -2,8 +2,8 @@ body {
     background-color: #FCFCFC;
 }
 
-.orange-text {
-    color: orange;
+.#2196f3-text {
+    color: #2196f3;
 }
 
 .logo-text {
@@ -36,7 +36,7 @@ ul li a {
 
 ul li a:hover {
     cursor: pointer;
-    color: orange;
+    color: #095592;
 }
 
 .center {
@@ -81,7 +81,7 @@ ul li a:hover {
 }
 
 .caps {
-    color: orange;
+    color: #2196f3;
     text-transform: uppercase;
     font-size: 200%;
     font-family: 'Lato', sans-serif;
@@ -116,7 +116,7 @@ ul.list li span {
     position: relative;
     text-decoration: none;
     color: white;
-    background-color: orange;
+    background-color: #2196f3;
     padding: 6px 18px;
     border-radius: 10px;
     font-size: 150%;
@@ -129,7 +129,7 @@ ul.list li span {
 
 .preview-btn:hover {
     cursor: pointer;
-    background: rgb(245, 178, 53);
+    background: #095592;
 }
 
 /* <!......................... overlay page css ..................*/
@@ -169,7 +169,7 @@ ul.list li span {
     top: 3%;
     right: 7%;
     color: rgb(255, 255, 255);
-    background: orange;
+    background: #2196f3;
     z-index: 199;
     font-size: 80%;
     font-weight: bolder;
@@ -180,8 +180,8 @@ ul.list li span {
 }
 
 .cross:hover{
-    color:orange;
-    border: 1px solid orange;
+    color:#2196f3;
+    border: 1px solid #095592;
     background: #ffffff;
     transition: 0.86s all;
 }
@@ -216,7 +216,7 @@ ul.list li span {
         position: relative;
         text-decoration: none;
         color: white;
-        background-color: orange;
+        background-color: #2196f3;
         padding: 6px 18px;
         border-radius: 10px;
         font-size: 150%;

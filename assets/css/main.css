@@ -6,6 +6,9 @@ body {
 /* ---------------------------------------
             home page left part text
 -------------------------------------------*/
+.orange-text{
+    color: #2196f3;
+}
 
 .left {
     padding-left: 120px;
@@ -33,6 +36,8 @@ body {
     padding:39px 0px;
 }
 
+
+
 p.small-text {
     font-size: 150%;
     font-weight: normal;
@@ -57,7 +62,7 @@ p.small-text {
 }
 
 .cv-button, .follow {
-    background-color: orange;
+    background-color: #2196f3;
     padding: 12px 18px;
     border-radius: 10px;
     color: white;
@@ -72,7 +77,7 @@ p.small-text {
 
 .cv-button:hover, .follow:hover {
     cursor: pointer;
-    background: rgb(245, 178, 53);
+    background: #095592;
 }
 
 .follow {
@@ -93,6 +98,7 @@ section#hero {
     display: flex;
     margin-top: -2%;
 }
+
 .home-img{
     margin:auto;
 }
@@ -160,9 +166,15 @@ i.fa-instagram:hover {
 ----------------------------------------------- */
 
 @media (max-width: 767px){
-    nav{
-        display:none;
+    section#hero{
+        margin-top:-1%;
+        z-index: -1;
     }
+
+    .mr-top-46-percent{
+        margin-top: 200px !important;
+    }
+    
     .left {
         padding-left: 12px;
         width: 100%;
@@ -175,6 +187,10 @@ i.fa-instagram:hover {
         margin-top: 10%;
         box-shadow: 0 8px 30px -7px #505152;
         margin: 0 auto;
+    }
+
+    .margin-top img{
+        margin-top: 12%;
     }
 
     .view_mobile{
