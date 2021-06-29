@@ -22,6 +22,10 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
 </head>
 
 <body>
+
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v11.0" nonce="K4YqeCcj"></script>
+
     <?php require_once 'nav_bar.php'; ?>
 
 
@@ -38,18 +42,18 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
             <img src="./images/blogs/<?= $blog->image ?>" alt="" class="src">
 
             <div class="black-overlay">
-            <div class="info-list">
-                <ul>
-                    <li>
+                <div class="info-list">
+                    <ul>
+                        <li>
 
-                        <i class="fas fa-calendar-alt" style="font-size:100%;"></i>
+                            <i class="fas fa-calendar-alt" style="font-size:100%;"></i>
 
-                        <?= isset($blog->created_at) ? date('d F Y') : '' ?>
-                    </li>
-                </ul>
+                            <?= isset($blog->created_at) ? date('d F Y') : '' ?>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            </div>
-           
+
         </div>
 
         <div class="blogdetail-content">
@@ -59,8 +63,13 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
 
             <div class="blogdetails-para">
                 <?= $blog->description ?>
+                <div class="fb-comments" data-href="http://localhost:8000/blog_details.php?id=<?= $blog->id ?>" data-width="80vw" data-numposts="5"></div>
             </div>
         </div>
+
+
+
+        <!-- <div class="fb-comments" data-href="http://localhost:8000/blog_details.php?id=1" data-width="80vw" data-numposts="5"></div> -->
     <?php
     }
     ?>

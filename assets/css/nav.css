@@ -34,7 +34,7 @@ nav {
     align-items: center;
 }
 
-div#hamburger-bar{
+div#hamburger-bar {
     display: none;
 }
 
@@ -62,41 +62,50 @@ ul li a:hover {
     color: #2196f3;
 }
 
-@media (max-width:767px){
-    div#hamburger-bar{
+@media (max-width:767px) {
+    div#hamburger-bar {
         display: block;
+        transition: top 3000ms ease-in-out 3000ms;
     }
-
-    .nav-right-list{
+    .nav-right-list {
         display: block;
+        transition: top 300ms ease-in-out 300ms;
     }
-    
-    .nav-right-list ul{
-        display:none;
+    .nav-right-list ul {
+        display: none;
+        transition: top 300ms ease-in-out 300ms;
+        border-radius: 12px;
     }
-
-    .nav-right-list-ul{
+    .nav-right-list-ul {
         width: 100%;
-        display:flex !important;
+        display: flex !important;
         flex-direction: column;
         position: fixed;
         background-color: #095592;
         /* background:rgb(100, 100, 100); */
         top: 75px;
         left: 0;
-        color:#ffffff;
+        color: #ffffff;
         text-align: center;
+        transition: top 300ms ease-in-out 300ms;
+        animation: mymove 1s 1;
     }
-
-    .nav-right-list ul li a{
+    @keyframes mymove {
+        from {
+            opacity: 0;
+            height: 0px;
+        }
+        to {
+            opacity: 1;
+            height: 260px;
+        }
+    }
+    .nav-right-list ul li a {
         color: #ffffff;
         text-align: center;
     }
-
-    .nav-right-list ul li{
+    .nav-right-list ul li {
         border-bottom: 1px solid #ffffff;
         border-radius: 12px;
     }
-
-
 }

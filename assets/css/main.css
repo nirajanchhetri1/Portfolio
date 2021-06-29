@@ -1,3 +1,6 @@
+html{
+    scroll-behavior: smooth;
+}
 
 body {
     background-color: #F6F6F6;
@@ -171,10 +174,20 @@ i.fa-instagram:hover {
         z-index: -1;
     }
 
-    .mr-top-46-percent{
+    section.mr-top-46-percent{
         margin-top: 200px !important;
+        animation: mymove2 1s 1;
     }
-    
+/* 
+    @keyframes mymove2 {
+        from {
+            margin-top: 0px !important;
+        }
+        to {
+            margin-top: 200px !important;
+        }
+    }
+     */
     .left {
         padding-left: 12px;
         width: 100%;

@@ -23,7 +23,6 @@ $cookie_name = "data";
 $cookie_value = $data["profession"];
 // Set cookie
 setcookie($cookie_name, $cookie_value);
-
 // if (!isset($_COOKIES[$cookie_name])) {
 //     print("Cookie created | ");
 // }
@@ -147,12 +146,16 @@ setcookie($cookie_name, $cookie_value);
         function getCookie() {
             // Split cookie string and get all individual name=value pairs in an array
             var cookieArr = document.cookie.split(";");
-
+            console.log(cookieArr);
+            console.log("pppp");
 
             // Loop through the array elements
             for (var i = 0; i < cookieArr.length; i++) {
                 var cookiePair = cookieArr[i].split("=");
-                if (cookiePair[0] == ' data') {
+                // console.log(cookiePair);
+                // console.log("cpair");
+
+                if (cookiePair[0] == 'data' || cookiePair[0] == ' data') {
                     myCookiePair = cookiePair[1].split('+').join(' ');
                     return decodeURIComponent(myCookiePair);
                 }
