@@ -25,7 +25,7 @@ $logo = $logoC->getLogo();
                 <a class="<?= $_SERVER['REQUEST_URI'] == '/about.php' ? 'active' : '' ?>" href="about.php">About</a>
             </li>
             <li>
-                <a class="<?= $_SERVER['REQUEST_URI'] == '/folio.php' ? 'active' : '' ?>" href="folio.php">Protfolio</a>
+                <a class="<?= $_SERVER['REQUEST_URI'] == '/folio.php' ? 'active' : '' ?>" href="folio.php">Portfolio</a>
             </li>
             <li>
 

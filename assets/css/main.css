@@ -71,6 +71,7 @@ p.small-text {
     color: white;
     font-size: 150%;
     width: fit-content;
+    transition: 0.8s all;
 }
 
 .cv-button a{
@@ -81,6 +82,7 @@ p.small-text {
 .cv-button:hover, .follow:hover {
     cursor: pointer;
     background: #095592;
+    transition: 0.8s all;
 }
 
 .follow {

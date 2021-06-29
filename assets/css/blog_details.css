@@ -15,6 +15,10 @@
     padding: 12px 12px 12px 3px;
 }
 
+.orange-text{
+    color:#2196f3;
+}
+
 .blog-detailimg {
     position: relative;
     margin: 0 auto;
@@ -84,9 +88,6 @@
 ---------------------------------------------------------- */
 
 @media (max-width:767px) {
-    nav {
-        /* display: none !important; */
-    }
     .blog-detailimg {
         position: relative;
         margin: 0 auto;
