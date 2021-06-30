@@ -176,8 +176,8 @@ i.fa-instagram:hover {
         z-index: -1;
     }
 
-    section.mr-top-46-percent{
-        margin-top: 200px !important;
+    .mr-top-46-percent{
+        margin-top: 80% !important;
         animation: mymove2 1s 1;
     }
 /* 

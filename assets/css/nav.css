@@ -77,7 +77,7 @@ ul li a:hover {
         border-radius: 12px;
     }
     .nav-right-list-ul {
-        width: 100%;
+        width: 100vw;
         display: flex !important;
         flex-direction: column;
         position: fixed;
@@ -99,6 +99,11 @@ ul li a:hover {
             opacity: 1;
             height: 260px;
         }
+    }
+
+    .mr-top-46-percent{
+        margin-top: 200px !important;
+        /* animation: mymove2 1s 1; */
     }
     .nav-right-list ul li a {
         color: #ffffff;

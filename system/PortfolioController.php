@@ -29,6 +29,7 @@ class PortfolioController extends Db
             $image = $this->uploadImage();
             $data['image'] = $image;
         }
+        // header('location: portfolio.php');
         return  $this->create('portfolio', $data);
     }
 

@@ -1,0 +1,87 @@
+/* --------------------------------------------------
+        Admin Dashboard CSS Only oky dude
+----------------------------------------------------- */
+*{
+    margin:0;
+    padding:0;
+}
+
+.welcome-row{
+    color:black;
+    font-family: 'Lato';
+    font-weight: bolder;
+    font-size: 150%;
+    padding:94px 18px 18px 18px;
+}
+
+.yellow{
+    background: #fec009 !important;
+}
+
+.blue{
+    background: #16a2b9 !important;
+}
+
+.green{
+    background: #26a844 !important;
+}
+.dashboard-card{
+    position: relative;
+    width: auto;
+    height:7rem;
+    border-radius: 8px;
+    margin:12px;
+    padding: 6px;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.dashboard-card p{
+    padding-left:24px;
+}
+
+.overlay{
+    background: black;
+    opacity: 0.245;
+    position: absolute;
+    bottom: 0;
+    left:0;
+    height:2.5rem;
+    width: 100%;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    text-align:center;
+    padding-top:12x 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.more-info a{
+    z-index: 99;
+    opacity: 1 !important;
+    position: absolute;
+    bottom: 0;
+    left:50%;
+    height:2rem;
+    transform:translate(-50%,-0%);
+    color:#ffffff;
+    text-decoration: none;
+}
+
+p.number, p.stat-title{
+    margin-bottom: 0px;
+}
+
+.more-info a:hover{
+    cursor: pointer;
+    color: black;
+    transition:0.687s all;
+}
+
+.my-fixed-width-td{
+    width:12px;
+    max-height:12px;
+    overflow-y: hidden;
+    word-break: break-all;
+}

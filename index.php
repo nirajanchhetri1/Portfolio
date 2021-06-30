@@ -34,7 +34,7 @@ setcookie($cookie_name, $cookie_value);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>protfolio_site</title>
+    <title>Nirajan Chhetri</title>
     <link rel="stylesheet" href="assets/css/nav.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
@@ -47,6 +47,8 @@ setcookie($cookie_name, $cookie_value);
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Roboto:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/img/folio-logo.png" type="image/png" sizes="32x32">
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/TypewriterJS/2.18.0/core.min.js"></script>
 </head>

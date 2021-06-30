@@ -44,6 +44,8 @@ $logo = $logoC->getLogo();
         var element = document.getElementById("my-ul");
         var elementSection = document.getElementById("hero");
         var elementMyIconny = document.getElementById("my-iconny");
+        var elementMyAboutImage = document.getElementById("about-img");
+        console.log(elementMyAboutImage);
         element.classList.toggle("nav-right-list-ul");
         elementSection.classList.toggle("mr-top-46-percent");
         if (x == 0) {

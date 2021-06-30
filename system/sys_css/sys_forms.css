@@ -1,0 +1,34 @@
+input {
+    width: 45vw !important;
+}
+
+table {
+    margin-left: 12%;
+}
+
+@media (max-width:767px) {
+    table {
+        margin-left: 0%;
+    }
+}
+
+.my-bold {
+    font-family: 'Lato';
+    font-weight: 600;
+}
+
+.my-blue {
+    color: #16a2b9;
+}
+
+.s-media {
+    display: inline !important;
+    width: 25% !important;
+}
+
+@media (max-width:767px) {
+    .s-media {
+        display: block;
+        width:45vw !important;
+    }
+}

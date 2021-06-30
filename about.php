@@ -26,13 +26,14 @@ $skills = $skillC->getData('skills');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Nirajan Chhetri</title>
     <link rel="stylesheet" href="assets/css/about.css">
     <link rel="stylesheet" href="assets/css/nav.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
     <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/img/folio-logo.png" type="image/png" sizes="32x32">
 
 </head>
 
@@ -40,7 +41,7 @@ $skills = $skillC->getData('skills');
     <?php require_once 'nav_bar.php'; ?>
 
     <div class="about-info">
-        <div class="about-image">
+        <div id="about-img" class="about-image">
             <img src="./images/about/<?= $result->image ?>" alt="about-image">
             <div class="image-border"></div>
         </div>
@@ -275,5 +276,31 @@ $skills = $skillC->getData('skills');
             </div>
         </div> -->
     </div>
+
+    <script>
+        var x = 0;
+
+        function showNavList() {
+            var element = document.getElementById("my-ul");
+            var elementSection = document.getElementById("hero");
+            var elementMyIconny = document.getElementById("my-iconny");
+            var elementMyAboutImage = document.getElementById("about-img");
+            console.log(elementMyAboutImage);
+            element.classList.toggle("nav-right-list-ul");
+            elementMyAboutImage.classList.toggle("mr-top-46-percent");
+            // elementSection.classList.toggle("mr-top-46-percent");
+            if (x == 0) {
+                elementMyIconny.classList.remove("fa-times");
+                elementMyIconny.classList.add("fa-bars");
+                x = 1;
+            } else {
+                elementMyIconny.classList.remove("fa-bars");
+                elementMyIconny.classList.add("fa-times");
+                x = 0;
+
+            }
+        }
+    </script>
+</body>
 
 </html>

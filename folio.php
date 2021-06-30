@@ -15,11 +15,13 @@ $result = $portfolio->all();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Nirajan Chhetri</title>
     <link rel="stylesheet" href="assets/css/folio.css">
     <link rel="stylesheet" href="assets/css/nav.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/img/folio-logo.png" type="image/png" sizes="32x32">
+
 </head>
 
 <body>

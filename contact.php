@@ -25,20 +25,21 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'SEND MESSAGE') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Nirajan Chhetri | Contact</title>
     <link rel="stylesheet" href="assets/css/contact.css">
     <link rel="stylesheet" href="assets/css/nav.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
     <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/img/folio-logo.png" type="image/png" sizes="32x32">
 
 </head>
 
 <body>
     <?php require_once 'nav_bar.php'; ?>
 
-    <div class="Contact-center">
+    <div id="cc" class="Contact-center">
 
         <p>
             Get &nbsp;<span class="orange-text">in touch</span>
@@ -93,7 +94,7 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'SEND MESSAGE') {
                         </tr>
                         <tr>
                             <td class="bg-circle"><i class="fab fa-instagram"></i></td>
-                            <td class="my-padding"><?= $result->instagram ?></td>
+                            <td class="my-padding"><a href="<?= $result->instagram ?>" style="color:black; text-decoration:none;word-break: break-all; overflow-y:hidden;" target="_blank"> <?= substr($result->instagram, 0, 26)  ?> </a></td>
                         </tr>
                         <tr class="ht-15"></tr>
                     <?php endif; ?>
@@ -104,7 +105,7 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'SEND MESSAGE') {
                         </tr>
                         <tr>
                             <td class="bg-circle"><i class="fab fa-linkedin-in"></i></td>
-                            <td class="my-padding"><?= $result->linkedin ?></td>
+                            <td class="my-padding"><a href="<?= $result->linkedin ?>" style="color:black; text-decoration:none;" target="_blank"><?= substr($result->linkedin, 0, 26) ?></a></td>
                         </tr>
                         <tr class="ht-15"></tr>
                     <?php endif; ?>
@@ -115,7 +116,7 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'SEND MESSAGE') {
                         </tr>
                         <tr>
                             <td class="bg-circle"><i class="fab fa-twitter"><span style="color:black;"></i></td>
-                            <td class="my-padding"><?= $result->twitter ?></td>
+                            <td class="my-padding"><a href="<?= $result->twitter ?>" style="color:black; text-decoration:none;" target="_blank"><?= substr($result->twitter, 0, 26)?></a></td>
                         </tr>
                         <tr class="ht-15"></tr>
                         <tr class="ht-15"></tr>
@@ -178,3 +179,26 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'SEND MESSAGE') {
             <?php } ?>
         </div>
     </div>
+
+    <script>
+        var x = 0;
+
+        function showNavList() {
+            var element = document.getElementById("my-ul");
+            var elementMyIconny = document.getElementById("my-iconny");
+            var elementCC = document.getElementById("cc");
+            element.classList.toggle("nav-right-list-ul");
+            elementCC.classList.toggle("mr-top-46-percent");
+            // elementSection.classList.toggle("mr-top-46-percent");
+            if (x == 0) {
+                elementMyIconny.classList.remove("fa-times");
+                elementMyIconny.classList.add("fa-bars");
+                x = 1;
+            } else {
+                elementMyIconny.classList.remove("fa-bars");
+                elementMyIconny.classList.add("fa-times");
+                x = 0;
+
+            }
+        }
+    </script>
