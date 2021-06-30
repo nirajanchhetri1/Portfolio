@@ -57,7 +57,7 @@
 
 .contactright-content p {
     /* padding:6px 2px 0px; */
-    /* width: 55%; */
+    width: 70%; 
     padding-bottom: 12px;
     font-family: 'Lato';
 }
@@ -118,7 +118,9 @@ form input, textarea {
 
 .contact-form-btn:hover{
     cursor: pointer;
-    opacity: 0.67;
+    background:#095592;
+    /* opacity: 0.67; */
+    transition: 0.8s all;
 }
 
 .form-field {

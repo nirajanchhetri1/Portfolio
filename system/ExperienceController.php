@@ -12,13 +12,17 @@ class ExperienceController extends Db
     $start_date = $_POST['start_date'];
     $end_date = $_POST['end_date'];
     $description = $_POST['description'];
+    $company_url = $_POST['company_url'];
+    $present = $_POST['present'];
 
     $data = [
       'position' => $position,
       'company' => $company,
       'start_date' => $start_date,
       'end_date' => $end_date,
-      'description' => $description
+      'description' => $description,
+      'company_url' => $company_url,
+      'present' => $present,
     ];
 
     return $this->create('experiences', $data);
@@ -33,6 +37,9 @@ class ExperienceController extends Db
     $end_date = $_POST['end_date'];
     $description = $_POST['description'];
     $id = $_POST['id'];
+    $company_url = $_POST['company_url'];
+    $present = $_POST['present'];
+
 
     $data = [
       'position' => $position,
@@ -40,10 +47,12 @@ class ExperienceController extends Db
       'start_date' => $start_date,
       'end_date' => $end_date,
       'description' => $description,
+      'company_url' => $company_url,
+      'present' => $present,
       'id' => $id
     ];
 
-    $sql = 'UPDATE experiences SET position = :position, start_date = :start_date, end_date = :end_date, description = :description, company = :company';
+    $sql = 'UPDATE experiences SET position = :position, start_date = :start_date, end_date = :end_date, description = :description, company = :company, company_url = :company_url, present = :present';
 
     $sql .= ' WHERE id = :id';
 

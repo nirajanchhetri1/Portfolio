@@ -5,12 +5,12 @@ require_once './system/PageController.php';
 $page = new PageController();
 $page_detail = $page->getWhereData('page_detail', ['page' => 'portfolio_detail'], [], true);
 
-
 $port = new PortfolioController();
 
 $reuslt = null;
 if (isset($_GET['id']) && $_GET['id'] > 0) {
     $reuslt = $port->getData('portfolio', null, $_GET['id']);
+
 }
 ?>
 

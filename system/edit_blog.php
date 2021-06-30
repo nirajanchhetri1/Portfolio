@@ -10,9 +10,8 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
     $selectedData = $blog->getData('blogs', null, $_GET['id']);
 }
 
-if (isset($_POST['submit']) && $_POST['submit'] && $_POST['submit'] == 'Submit') {
+if (isset($_POST['submit']) && $_POST['submit'] && $_POST['submit'] == 'Update') {
     $blog = new BlogController();
-
     $data = $blog->updateData();
 
     if (isset($data)) {
@@ -83,7 +82,7 @@ if (isset($_POST['submit']) && $_POST['submit'] && $_POST['submit'] == 'Submit')
                         <div class="container">
                             <div class="row">
                                 <div class="col-12">
-                                    <form method="POST" enctype="multipart/form-data">
+                                    <form method="POST" action="#" enctype="multipart/form-data">
                                         <table>
                                             <tr>
                                                 <td class="my-bold">Title</td>
@@ -118,6 +117,10 @@ if (isset($_POST['submit']) && $_POST['submit'] && $_POST['submit'] == 'Submit')
             </div>
         </div>
     </div>
+    <script src="https://cdn.ckeditor.com/4.16.1/standard/ckeditor.js"></script>
+     <script>
+         CKEDITOR.replace('description')
+     </script>
 </body>
 
 </html>

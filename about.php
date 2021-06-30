@@ -143,8 +143,8 @@ $skills = $skillC->getData('skills');
             foreach ($experiences as $experience) {
             ?>
                 <div class="experience-list">
-                    <div class="time">i <?= $experience->start_date ?> - <?= $experience->end_date ?></div>
-                    <div class="profession"><?= $experience->position ?> <span><?= $experience->company ?></span></div>
+                    <div class="time"><i class="fas fa-calendar-alt" style="font-size:150%; padding-right:12px;"></i> <?= $experience->start_date ?> - <?= $experience->present == 1 ? "Present" : $experience->end_date ?></div>
+                    <div class="profession"><?= $experience->position ?> <span><a href="<?= $experience->company_url?>"><?= $experience->company ?></a></span></div>
                     <div class="description"><?= $experience->description ?></div>
                 </div>
             <?php
@@ -173,7 +173,7 @@ $skills = $skillC->getData('skills');
             foreach ($educaitons as $education) {
             ?>
                 <div class="education-list">
-                    <div class="time">i <?= $education->start_date ?> - <?= $education->end_date ?></div>
+                    <div class="time"><i class="fas fa-calendar-alt"></i> <?= $education->start_date ?> - <?= $education->is_running==1?'Running':$education->end_date ?></div>
                     <div class="profession"><?= $education->degree ?> <span><?= $education->school ?></span></div>
                     <div class="description"><?= $education->description ?></div>
                 </div>

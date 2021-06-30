@@ -86,7 +86,7 @@ if (isset($_POST['submit']) && $_POST['submit'] && $_POST['submit'] == 'Submit')
                                             </tr>
                                             <tr>
                                                 <td class="my-bold">Description</td>
-                                                <td><textarea class="form-control my-3 mx-3" name="description" cols="40" rows="15"></textarea></td>
+                                                <td><textarea class="form-control my-3 mx-3" id="description" name="description" cols="40" rows="15"></textarea></td>
                                             </tr>
                                             <tr>
                                                 <td class="my-bold">Image</td>
@@ -106,6 +106,10 @@ if (isset($_POST['submit']) && $_POST['submit'] && $_POST['submit'] == 'Submit')
             </div>
         </div>
     </div>
+    <script src="https://cdn.ckeditor.com/4.16.1/standard/ckeditor.js"></script>
+     <script>
+         CKEDITOR.replace('description')
+     </script>
 </body>
 
 </html>

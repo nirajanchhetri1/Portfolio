@@ -108,6 +108,15 @@ if (isset($_POST['submit']) && $_POST['submit'] && $_POST['submit'] == 'Submit')
                         <td><input class="form-control my-3 mx-3" type="date" name="end_date" placeholder="End Date" value="<?= isset($selectedData) ? $selectedData->end_date : '' ?>"></td>
                       </tr>
                       <tr>
+                      <td>Is Running</td>
+                      <td>
+                      </tr>
+                      <input class="form-check-input" type="checkbox" value="1" name="is_running" id="isRunning" <?=isset($selectedData)&&$selectedData->is_running==1 ? 'checked' : '' ?>>
+                        <label class="form-check-label" for="isRunning">
+                          Running
+                        </label>
+                        </td>
+                      <tr>
                         <td class="my-bold">Description(max 500 character)</td>
                         <td>
                           <textarea class="form-control my-3 mx-3" name="description" cols="30" rows="10"><?= isset($selectedData) ? $selectedData->description : '' ?></textarea>

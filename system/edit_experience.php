@@ -96,6 +96,10 @@ if (isset($_POST['submit']) && $_POST['submit'] && $_POST['submit'] == 'Submit')
                         <td><input class="form-control my-3 mx-3" type="text" name="company" placeholder="Company" value="<?= isset($selectedData) ? $selectedData->company : '' ?>"></td>
                       </tr>
                       <tr>
+                        <td class="my-bold">Company Url</td>
+                        <td><input class="form-control my-3 mx-3" type="text" name="company_url" placeholder="Company" value="<?= isset($selectedData) ? $selectedData->company_url : '' ?>"></td>
+                      </tr>
+                      <tr>
                         <td class="my-bold">Position</td>
                         <td><input class="form-control my-3 mx-3" type="text" name="position" placeholder="Position" value="<?= isset($selectedData) ? $selectedData->position : '' ?>"></td>
                       </tr>
@@ -106,6 +110,15 @@ if (isset($_POST['submit']) && $_POST['submit'] && $_POST['submit'] == 'Submit')
                       <tr>
                         <td class="my-bold">End Date</td>
                         <td><input class="form-control my-3 mx-3" type="date" name="end_date" placeholder="End Date" value="<?= isset($selectedData) ? $selectedData->end_date : '' ?>"></td>
+                      </tr>
+                      <tr>
+                        <td class="my-bold">Present</td>
+                        <td>
+                          <input class="form-check-input" type="checkbox" value="1" name="present" id="present" <?= isset($selectedData) && $selectedData->present == 1 ? 'checked' : '' ?>>
+                          <label class="form-check-label" for="present">
+                          Present
+                          </label>
+                        </td>
                       </tr>
                       <tr>
                         <td class="my-bold">Description(max 500 character)</td>

@@ -89,6 +89,10 @@ if (isset($_POST['submit']) && $_POST['submit'] && $_POST['submit'] == 'Submit')
                         <td><input class="form-control my-3 mx-3" type="text" name="company" placeholder="Company"></td>
                       </tr>
                       <tr>
+                        <td class="my-bold">Company Url</td>
+                        <td><input class="form-control my-3 mx-3" type="text" name="company_url" placeholder="Company Url"></td>
+                      </tr>
+                      <tr>
                         <td class="my-bold">Position</td>
                         <td><input class="form-control my-3 mx-3" type="text" name="position" placeholder="Position"></td>
                       </tr>
@@ -99,6 +103,15 @@ if (isset($_POST['submit']) && $_POST['submit'] && $_POST['submit'] == 'Submit')
                       <tr>
                         <td class="my-bold">End Date</td>
                         <td><input class="form-control my-3 mx-3" type="date" name="end_date" placeholder="End Date"></td>
+                      </tr>
+                      <tr>
+                        <td class="my-bold">Present</td>
+                        <td>
+                          <input class="form-check-input" type="checkbox" value="1" name="present" id="present">
+                          <label class="form-check-label" for="present">
+                          Present
+                          </label>
+                        </td>
                       </tr>
                       <tr>
                         <td class="my-bold">Description(max 500 character)</td>

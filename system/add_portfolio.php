@@ -11,7 +11,7 @@ if (isset($_POST['submit']) && $_POST['submit'] && $_POST['submit'] == 'Submit')
     $data = $portfolio->saveData();
 
     if (isset($data)) {
-        header('location: dashboard.php');
+        header('location: portfolio.php');
     }
 }
 

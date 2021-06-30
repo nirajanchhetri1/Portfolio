@@ -60,7 +60,8 @@ class Db
     if (isset($limit)) {
       $sql .= " LIMIT $limit";
     }
-    // return $sql;
+    $sql .= ' ORDER BY id desc';
+
     if (isset($id)) {
       $executedQuery = $this->executeQuery($sql, ['id' => $id]);
     } else {
