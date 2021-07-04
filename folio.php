@@ -24,7 +24,7 @@ $result = $portfolio->all();
 
 </head>
 
-<body>
+<body style="background:#F6F6F6;">
     <?php require_once 'nav_bar.php'; ?>
 
     <section id="card">

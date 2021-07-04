@@ -93,6 +93,10 @@ if (isset($_POST['submit']) && $_POST['submit'] && $_POST['submit'] == 'Submit')
                         <td><input class="form-control my-3 mx-3" type="text" name="school" placeholder="School"></td>
                       </tr>
                       <tr>
+                        <td class="my-bold">School/College Url</td>
+                        <td><input class="form-control my-3 mx-3" type="text" name="school_url" placeholder="School/College Url"></td>
+                      </tr>
+                      <tr>
                         <td class="my-bold">Start Date</td>
                         <td><input class="form-control my-3 mx-3" type="date" name="start_date" placeholder="Start Date"></td>
                       </tr>

@@ -83,12 +83,13 @@ ul li a:hover {
         position: fixed;
         background-color: #095592;
         /* background:rgb(100, 100, 100); */
-        top: 75px;
+        top: 58px;
         left: 0;
         color: #ffffff;
         text-align: center;
         transition: top 300ms ease-in-out 300ms;
         animation: mymove 1s 1;
+        z-index: 999;
     }
     @keyframes mymove {
         from {
@@ -112,5 +113,13 @@ ul li a:hover {
     .nav-right-list ul li {
         border-bottom: 1px solid #ffffff;
         border-radius: 12px;
+    }
+
+    nav{
+        width: 100vw;
+        position: fixed;
+        top:0;
+        background: #f6f6f6;
+        z-index: 999;
     }
 }

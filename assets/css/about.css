@@ -102,12 +102,28 @@ ul.info-right li p {
     margin: 0 auto;
 }
 
+.my-hr-2{
+    width: 80%;
+    margin:0 auto;
+    margin-top:4%;
+}
+
+@media (max-width: 767px){
+    .my-hr-2{
+        width: 80%;
+        margin:0 auto;
+        margin-top:8%;
+    }
+    
+}
+
 .ex-edu {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     width: 80%;
     margin: 0 auto;
+    position: relative;
 }
 
 .experience p {
@@ -124,12 +140,15 @@ ul.info-right li p {
     font-family: 'Lato';
     width: 40%;
     word-break: break-all;
+    position: relative;
 }
+
 
 .experience-list {
     padding: 20px 6px;
     font-family: 'Lato';
 }
+
 
 .education {
     display: flex;
@@ -137,6 +156,25 @@ ul.info-right li p {
     width: 40%;
     /* overflow-x: hidden; */
     word-break: break-all;
+    position: relative;
+}
+
+.experience-list::before{
+    content:'';
+    border-left:2px solid #2899f3;
+    height:90%;
+    position:absolute;
+    top:84px; /* This is fixed as per padding and height of other elements  */
+    left:-15px;
+}
+
+.education-list::before{
+    content:'';
+    border-left:2px solid #2899f3;
+    height:100%;
+    position:absolute;
+    top:24px; /* This is fixed as per padding and height of other elements  */
+    left:-15px;
 }
 
 .education p {
@@ -149,6 +187,7 @@ ul.info-right li p {
 .education-list {
     padding: 20px 6px;
     font-family: 'Lato';
+    position: relative;
 }
 
 .experience-list div {
@@ -162,6 +201,39 @@ ul.info-right li p {
 .experience-list .time, .experience-list .profession span, .education-list .time, .education-list .profession span {
     color: #2196f3;
     font-weight: bold;
+    padding-bottom:8px;
+    position: relative;
+}
+
+span.left-circle{
+    position:absolute;
+    color:black;
+    width:18px;
+    height:18px;
+    border: 2px solid #2196f3;
+    top: 0;
+    left: -31px;
+    border-radius: 50%;
+    background:#f6f6f6;
+    z-index: 999;
+}
+
+/* .time::before{
+    content:'hi';
+    position: absolute;
+    width:auto;
+    height:auto;
+    top:0;
+    left:0;
+} */
+
+.education-list .description,.education-list .description,.experience-list .description, .experience-list .description{
+    padding-top:12px;
+}
+
+span.ex-span a,span.edu-span a{
+    color:inherit;
+    text-decoration:none;
 }
 
 /* -------------------------------------------------

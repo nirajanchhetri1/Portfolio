@@ -11,6 +11,7 @@ class EducationController extends Db
     $start_date = $_POST['start_date'];
     $end_date = $_POST['end_date'];
     $description = $_POST['description'];
+    $school_url = $_POST['school_url'];
     $is_running = isset($_POST['is_running']) ? 1 : 0;
 
     $data = [
@@ -19,6 +20,7 @@ class EducationController extends Db
       'start_date' => $start_date,
       'end_date' => $end_date,
       'description' => $description,
+      'school_url' => $school_url,
       'is_running' => $is_running,
     ];
 
@@ -33,6 +35,7 @@ class EducationController extends Db
     $start_date = $_POST['start_date'];
     $end_date = $_POST['end_date'];
     $description = $_POST['description'];
+    $school_url = $_POST['school_url'];
     $is_running = isset($_POST['is_running']) ? 1 : 0;
     $id = $_POST['id'];
 
@@ -42,11 +45,12 @@ class EducationController extends Db
       'start_date' => $start_date,
       'end_date' => $end_date,
       'description' => $description,
-      'is_running' => $is_running,
+      'school_url' => $school_url,
+      'is_running' => $is_running,      
       'id' => $id
     ];
 
-    $sql = 'UPDATE educations SET degree = :degree, start_date = :start_date, end_date = :end_date, description = :description, school = :school, is_running = :is_running';
+    $sql = 'UPDATE educations SET degree = :degree, school = :school, start_date = :start_date, end_date = :end_date, description = :description, school_url = :school_url, is_running = :is_running';
 
     $sql .= ' WHERE id = :id';
 

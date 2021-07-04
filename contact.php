@@ -94,7 +94,7 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'SEND MESSAGE') {
                         </tr>
                         <tr>
                             <td class="bg-circle"><i class="fab fa-instagram"></i></td>
-                            <td class="my-padding"><a href="<?= $result->instagram ?>" style="color:black; text-decoration:none;word-break: break-all; overflow-y:hidden;" target="_blank"> <?= substr($result->instagram, 0, 26)  ?> </a></td>
+                            <td class="my-padding"><a href="https://www.instagram.com/<?= $result->instagram ?>" style="color:black; text-decoration:none;word-break: break-all; overflow-y:hidden;" target="_blank"> <?= substr($result->instagram, 0, 26)  ?> </a></td>
                         </tr>
                         <tr class="ht-15"></tr>
                     <?php endif; ?>
@@ -105,7 +105,7 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'SEND MESSAGE') {
                         </tr>
                         <tr>
                             <td class="bg-circle"><i class="fab fa-linkedin-in"></i></td>
-                            <td class="my-padding"><a href="<?= $result->linkedin ?>" style="color:black; text-decoration:none;" target="_blank"><?= substr($result->linkedin, 0, 26) ?></a></td>
+                            <td class="my-padding"><a href="https://www.linkedin.com/in/<?= $result->linkedin ?>" style="color:black; text-decoration:none;" target="_blank"><?= substr($result->linkedin, 0, 26) ?></a></td>
                         </tr>
                         <tr class="ht-15"></tr>
                     <?php endif; ?>
@@ -116,7 +116,7 @@ if (isset($_POST['submit']) && $_POST['submit'] == 'SEND MESSAGE') {
                         </tr>
                         <tr>
                             <td class="bg-circle"><i class="fab fa-twitter"><span style="color:black;"></i></td>
-                            <td class="my-padding"><a href="<?= $result->twitter ?>" style="color:black; text-decoration:none;" target="_blank"><?= substr($result->twitter, 0, 26)?></a></td>
+                            <td class="my-padding"><a href="https://twitter.com/<?= $result->twitter ?>" style="color:black; text-decoration:none;" target="_blank"><?= substr($result->twitter, 0, 26)?></a></td>
                         </tr>
                         <tr class="ht-15"></tr>
                         <tr class="ht-15"></tr>

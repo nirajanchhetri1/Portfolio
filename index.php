@@ -8,6 +8,7 @@ $cvC = new CvController();
 $cv = $cvC->getCv();
 
 $result = $db->getData('home_page', null, null, 1);
+
 $data = array();
 foreach ($result as $newData) {
     $data = [
@@ -20,7 +21,9 @@ foreach ($result as $newData) {
 
 // Initialize cookie name
 $cookie_name = "data";
-$cookie_value = $data["profession"];
+// die;
+
+$cookie_value = isset($data['profession']) ? $data["profession"]:'';
 // Set cookie
 setcookie($cookie_name, $cookie_value);
 // if (!isset($_COOKIES[$cookie_name])) {

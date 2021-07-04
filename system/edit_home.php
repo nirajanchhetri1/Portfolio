@@ -5,7 +5,7 @@ if (!isset($_SESSION['logedin']) && $_SESSION['logedin'] == false) {
     header('location: login.php');
 }
 
-if (isset($_POST['submit']) && $_POST['submit'] && $_POST['submit'] == 'Submit') {
+if (isset($_POST['submit']) && $_POST['submit'] == 'Update') {
     $homePage = new HomePageController();
 
 

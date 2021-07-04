@@ -30,6 +30,12 @@ class HomePageController extends Db
         $data['youtube'] = isset($youtube) && !empty($youtube) ? $youtube : null;
         $data['git'] = isset($git) && !empty($git) ? $git : null;
 
+        if (isset($_FILES['image'])) {
+            $image = $this->uploadImage();
+            $data['image'] = $image;
+        }
+        
+
         return  $this->create('home_page', $data);
     }
 
@@ -48,6 +54,7 @@ class HomePageController extends Db
         $twitter = $_POST['twitter'];
         $youtube = $_POST['youtube'];
         $git = $_POST['git'];
+        $id=$_POST['id'];
 
         $sql = 'UPDATE home_page SET name = :name, profession = :profession, detail = :detail';
 
@@ -122,6 +129,10 @@ class HomePageController extends Db
             $sql .= ", image = :image";
             $udata['image'] = $image;
         }
+
+        $sql .= '  WHERE id = :id';
+        $udata['id']=$id;
+
         $updated = $this->query($sql, $udata);
 
         if ($updated == true) {
@@ -136,7 +147,7 @@ class HomePageController extends Db
         $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
 
         //   $extensions= array("jpeg","jpg","png");
-        mkdir('../images/');
+        // mkdir('../images/');
         $new_name = time() . '.' . $file_ext;
         if (move_uploaded_file($file_tmp, "./../images/" . $new_name)) {
             return $new_name;

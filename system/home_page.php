@@ -80,7 +80,7 @@ if (isset($_POST['submit']) && $_POST['submit'] && $_POST['submit'] == 'Submit')
                         <div class="container">
                             <div class="row">
                                 <div class="col-12">
-                                    <form action="" method="POST">
+                                    <form action="" method="POST" enctype="multipart/form-data">
 
                                         <table>
                                             <tr>
@@ -123,8 +123,8 @@ if (isset($_POST['submit']) && $_POST['submit'] && $_POST['submit'] == 'Submit')
                                             <tr>
                                                 <td class="my-bold">Facebook</td>
                                                 <td>
-                                                    <input type="text" name="facebook" id="facebook" class="form-control my-3 mx-3 s-media" placeholder="Your Facebook Username" aria-label="Your FB Username">
-                                                    <input type="text" name="facebookurl" id="facebookurl" class="form-control my-3 mx-3 s-media" placeholder="Your Facebook Url" aria-label="Your FB Url">
+                                                    <input type="text" name="facebook" id="facebook" class="form-control my-3 mx-3" placeholder="Your Facebook Username" aria-label="Your FB Username">
+                                                    <!-- <input type="text" name="facebookurl" id="facebookurl" class="form-control my-3 mx-3 s-media" placeholder="Your Facebook Url" aria-label="Your FB Url"> -->
                                                     <!-- <input type="text" name="facebook" id="facebook" /> -->
                                                 </td>
                                             </tr>
@@ -132,8 +132,8 @@ if (isset($_POST['submit']) && $_POST['submit'] && $_POST['submit'] == 'Submit')
                                             <tr>
                                                 <td class="my-bold">Instagram</td>
                                                 <td>
-                                                    <input type="text" name="instagram" id="instagram" class="form-control my-3 mx-3 s-media" placeholder="Your Instagram Username" aria-label="Your Insta Username">
-                                                    <input type="text" name="instagramurl" id="instagramurl" class="form-control my-3 mx-3 s-media" placeholder="Your Instagram Url" aria-label="Your Insta Url">
+                                                    <input type="text" name="instagram" id="instagram" class="form-control my-3 mx-3" placeholder="Your Instagram Username" aria-label="Your Insta Username">
+                                                    <!-- <input type="text" name="instagramurl" id="instagramurl" class="form-control my-3 mx-3 s-media" placeholder="Your Instagram Url" aria-label="Your Insta Url"> -->
                                                     <!-- <input type="text" name="instagram" id="instagram" /> -->
                                                 </td>
                                             </tr>
@@ -141,36 +141,41 @@ if (isset($_POST['submit']) && $_POST['submit'] && $_POST['submit'] == 'Submit')
                                             <tr>
                                                 <td class="my-bold">Linkedin</td>
                                                 <td>
-                                                    <input type="text" name="linkedin" id="linkedin" class="form-control my-3 mx-3 s-media" placeholder="Your Linkedin Username" aria-label="Your Linkedin Username">
-                                                    <input type="text" name="linkedinurl" id="linkedinurl" class="form-control my-3 mx-3 s-media" placeholder="Your Linkedin Url" aria-label="Your Linkedin Url">
+                                                    <input type="text" name="linkedin" id="linkedin" class="form-control my-3 mx-3" placeholder="Your Linkedin Username" aria-label="Your Linkedin Username">
+                                                    <!-- <input type="text" name="linkedinurl" id="linkedinurl" class="form-control my-3 mx-3 s-media" placeholder="Your Linkedin Url" aria-label="Your Linkedin Url"> -->
                                                     <!-- <input type="text" name="linkedin" id="linkedin" /> -->
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td class="my-bold">Twitter</td>
                                                 <td>
-                                                    <input type="text" name="twitter" id="twitter" class="form-control my-3 mx-3 s-media" placeholder="Your Twitter Url" aria-label="Your Twitter Username">
-                                                    <input type="text" name="twitterurl" id="twitterurl" class="form-control my-3 mx-3 s-media" placeholder="Your Twitter Url" aria-label="Your Twitter Url">
+                                                    <input type="text" name="twitter" id="twitter" class="form-control my-3 mx-3" placeholder="Your Twitter Url" aria-label="Your Twitter Username">
+                                                    <!-- <input type="text" name="twitterurl" id="twitterurl" class="form-control my-3 mx-3 s-media" placeholder="Your Twitter Url" aria-label="Your Twitter Url"> -->
                                                     <!-- <input type="text" name="twitter" id="twitter" /> -->
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td class="my-bold">Youtube</td>
                                                 <td>
-                                                    <input type="text" name="youtube" id="youtube" class="form-control my-3 mx-3 s-media" placeholder="Your Youtube Username" aria-label="Your Youtube Username">
-                                                    <input type="text" name="youtubeurl" id="youtubeurl" class="form-control my-3 mx-3 s-media" placeholder="Your Youtube Url" aria-label="Your Youtube Url">
+                                                    <input type="text" name="youtube" id="youtube" class="form-control my-3 mx-3" placeholder="Your Youtube Username" aria-label="Your Youtube Username">
+                                                    <!-- <input type="text" name="youtubeurl" id="youtubeurl" class="form-control my-3 mx-3 s-media" placeholder="Your Youtube Url" aria-label="Your Youtube Url"> -->
                                                     <!-- <input type="text" name="youtube" id="youtube" /> -->
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td class="my-bold">GitHub</td>
                                                 <td>
-                                                    <input type="text" name="git" id="git" class="form-control my-3 mx-3 s-media" placeholder="Your Github Username" aria-label="Your GitHub Username">
-                                                    <input type="text" name="giturl" id="giturl" class="form-control my-3 mx-3 s-media" placeholder="Your Github Url" aria-label="Your Youtube Url">
+                                                    <input type="text" name="git" id="git" class="form-control my-3 mx-3" placeholder="Your Github Username" aria-label="Your GitHub Username">
+                                                    <!-- <input type="text" name="giturl" id="giturl" class="form-control my-3 mx-3 s-media" placeholder="Your Github Url" aria-label="Your Youtube Url"> -->
                                                     <!-- <input type="text" name="git" id="git" /> -->
                                                 </td>
                                             </tr>
-
+                                            <tr>
+                                                <td class="my-bold">Image</td>
+                                                <td>
+                                                    <input class="form-control my-3 mx-3" type="file" name="image" id="image">
+                                                </td>
+                                            </tr>
                                             <tr>
                                                 <td></td>
                                                 <td>

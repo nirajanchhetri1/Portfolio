@@ -22,7 +22,7 @@ $blogs = $blogc->getData('blogs');
 
 </head>
 
-<body>
+<body style="background:#F6F6F6;">
     <?php require_once 'nav_bar.php'; ?>
 
     <div class="my-blogs">

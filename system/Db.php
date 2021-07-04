@@ -57,11 +57,13 @@ class Db
     $sql .= " FROM $table ";
     $sql .= isset($id) && $id > 0 ? " WHERE id = :id" : '';
 
+    $sql .= ' ORDER BY id desc';
+
+    
     if (isset($limit)) {
       $sql .= " LIMIT $limit";
     }
-    $sql .= ' ORDER BY id desc';
-
+    
     if (isset($id)) {
       $executedQuery = $this->executeQuery($sql, ['id' => $id]);
     } else {

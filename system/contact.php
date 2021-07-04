@@ -68,12 +68,16 @@ $contacts = $contactC->getData('contacts');
                   <th>Name</th>
                   <th>Email</th>
                   <th>Comment</th>
+                  <th>Action</th>
                 </tr>
                 <?php foreach ($contacts as $contact) : ?>
                   <tr>
                     <td><?= $contact->name ?></td>
                     <td><?= $contact->email ?></td>
                     <td><?= substr($contact->comment, 0, 26) ?>....</td>
+                    <td>
+                    <a href="view_contact.php?id=<?= $contact->id ?>">View</a>
+                    </td>
                   </tr>
                 <?php endforeach; ?>
               </table>

@@ -6,7 +6,25 @@ require_once 'system/SkillController.php';
 require_once 'system/CvController.php';
 
 $about = new AboutController();
-$result = $about->getWhereData('about', ['id' => 1], [], true);
+$data1 = $about->getData('about', null, null, 1);
+$result = array();
+foreach ($data1 as $newData) {
+    $result = [
+        'first_name' => $newData->first_name,
+        'last_name' => $newData->last_name,
+        'birthdate' => $newData->birthdate,
+        'nationality' => $newData->nationality,
+        'experience' => $newData->experience,
+        'address' => $newData->address,
+        'frelance' => $newData->frelance,
+        'languages' => $newData->languages,
+        'phone' => $newData->phone,
+        'email' => $newData->email,
+        'image' => $newData->image
+    ];
+}
+
+// $result = $about->getWhereData('about', ['id' => 1], [], true);
 
 $cvC = new CvController();
 $cv = $cvC->getCv();
@@ -42,7 +60,7 @@ $skills = $skillC->getData('skills');
 
     <div class="about-info">
         <div id="about-img" class="about-image">
-            <img src="./images/about/<?= $result->image ?>" alt="about-image">
+            <img src="./images/about/<?= $result['image'] ?>" alt="about-image">
             <div class="image-border"></div>
         </div>
 
@@ -50,32 +68,32 @@ $skills = $skillC->getData('skills');
         <ul class="info-left">
             <li>
                 <p>First Name</p>
-                <p><?= isset($result) ? $result->first_name : '' ?></p>
+                <p><?= isset($result) ? $result['first_name'] : '' ?></p>
                 <!-- First Name <span>Sabita</span> -->
             </li>
             <li>
                 <p>Last Name</p>
-                <p><?= isset($result) ? $result->last_name : '' ?></p>
+                <p><?= isset($result) ? $result['last_name'] : '' ?></p>
                 <!-- Last Name <span>Bhattarai</span> -->
             </li>
             <li>
                 <p>Birthdate</p>
-                <p><?= isset($result) ? $result->birthdate : '' ?></p>
+                <p><?= isset($result) ? $result['birthdate'] : '' ?></p>
                 <!-- Birthdate <span>21 June 1990</span> -->
             </li>
             <li>
                 <p>Nationality </p>
-                <p><?= isset($result) ? $result->nationality : '' ?></p>
+                <p><?= isset($result) ? $result['nationality'] : '' ?></p>
                 <!-- Nationality <span>Nepali</span> -->
             </li>
             <li>
                 <p>Experience</p>
-                <p><?= isset($result) ? $result->experience : '' ?></p>
+                <p><?= isset($result) ? $result['experience'] : '' ?></p>
                 <!-- Experience <span>3 years</span> -->
             </li>
             <li>
                 <p>Address</p>
-                <p><?= isset($result) ? $result->address : '' ?></p>
+                <p><?= isset($result) ? $result['address'] : '' ?></p>
                 <!-- Address <span>Kathmandu, Nepal</span> -->
             </li>
             <?php
@@ -96,22 +114,22 @@ $skills = $skillC->getData('skills');
         <ul class="info-right">
             <li>
                 <p>Freelance</p>
-                <p><?= isset($result) && $result->frelance == 1 ? 'Available' : 'Unavailable' ?></p>
+                <p><?= isset($result) && $result['frelance'] == 1 ? 'Available' : 'Unavailable' ?></p>
                 <!-- First Name <span>Sabita</span> -->
             </li>
             <li>
                 <p>Languages</p>
-                <p><?= isset($result) ? $result->languages : '' ?></p>
+                <p><?= isset($result) ? $result['languages'] : '' ?></p>
                 <!-- Last Name <span>Bhattarai</span> -->
             </li>
             <li>
                 <p>Phone</p>
-                <p><?= isset($result) ? $result->phone : '' ?></p>
+                <p><?= isset($result) ? $result['phone'] : '' ?></p>
                 <!-- Birthdate <span>21 June 1990</span> -->
             </li>
             <li>
                 <p>Email </p>
-                <p><?= isset($result) ? $result->email : '' ?></p>
+                <p><?= isset($result) ? $result['email'] : '' ?></p>
                 <!-- Nationality <span>Nepali</span> -->
             </li>
 
@@ -143,8 +161,8 @@ $skills = $skillC->getData('skills');
             foreach ($experiences as $experience) {
             ?>
                 <div class="experience-list">
-                    <div class="time"><i class="fas fa-calendar-alt" style="font-size:150%; padding-right:12px;"></i> <?= $experience->start_date ?> - <?= $experience->present == 1 ? "Present" : $experience->end_date ?></div>
-                    <div class="profession"><?= $experience->position ?> <span><a href="<?= $experience->company_url?>"><?= $experience->company ?></a></span></div>
+                    <div class="time"><span class="left-circle"></span><i class="far fa-calendar-alt" style="font-size:150%; padding-right:12px;"></i> <?= $experience->start_date ?> - <?= $experience->present == 1 ? "Present" : $experience->end_date ?></div>
+                    <div class="profession"><?= $experience->position ?> <span class="ex-span"><a target="_blank" href="<?= $experience->company_url?>"><?= $experience->company ?></a></span></div>
                     <div class="description"><?= $experience->description ?></div>
                 </div>
             <?php
@@ -173,8 +191,8 @@ $skills = $skillC->getData('skills');
             foreach ($educaitons as $education) {
             ?>
                 <div class="education-list">
-                    <div class="time"><i class="fas fa-calendar-alt"></i> <?= $education->start_date ?> - <?= $education->is_running==1?'Running':$education->end_date ?></div>
-                    <div class="profession"><?= $education->degree ?> <span><?= $education->school ?></span></div>
+                    <div class="time"><span class="left-circle"></span><i class="far fa-calendar-alt" style="font-size:150%; padding-right:12px;"></i> <?= $education->start_date ?> - <?= $education->is_running==1?'Running':$education->end_date ?></div>
+                    <div class="profession"><?= $education->degree ?> <span class="edu-span"><a target="_blank" href="<?= $education->school_url?>"><?= $education->school ?></a></span></div>
                     <div class="description"><?= $education->description ?></div>
                 </div>
             <?php
@@ -195,6 +213,8 @@ $skills = $skillC->getData('skills');
             </div> -->
         </div>
     </div>
+
+    <hr class="my-hr-2">
 
     <div class="my-skills">
         MY SKILLS
