@@ -1,8 +1,8 @@
 body {
-    background-color: #FCFCFC;
+    background-color: #F6F6F6;
 }
 
-.#2196f3-text {
+.orange {
     color: #2196f3;
 }
 
@@ -130,6 +130,10 @@ ul.list li span {
 .preview-btn:hover {
     cursor: pointer;
     background: #095592;
+}
+
+.mr-top-foliod-percent{
+    margin-top: 362px !important;
 }
 
 /* <!......................... overlay page css ..................*/

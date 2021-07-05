@@ -25,6 +25,7 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
     <link rel="stylesheet" href="assets/css/folio_detail.css">
     <link rel="stylesheet" href="assets/css/nav.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
     <link rel="icon" href="assets/img/folio-logo.png" type="image/png" sizes="32x32">
 
@@ -114,17 +115,29 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
 <?php
         }
 ?>
-<script>
-    // function show_modal() {
-    //     document.getElementsByClassName('overlay-box')[0].style.display = "block";
-    //     document.getElementsByClassName('overlay')[0].style.display = "block";
-    // }
+ <script>
+        var x = 0;
 
-    // function hide_modal() {
-    //     document.getElementsByClassName('overlay-box')[0].style.display = "none";
-    //     document.getElementsByClassName('overlay')[0].style.display = "none";
-    // }
-</script>
+        function showNavList() {
+            var element = document.getElementById("my-ul");
+            var elementMyIconny = document.getElementById("my-iconny");
+            var elementFolio = document.getElementById("card");
+            element.classList.toggle("nav-right-list-ul");
+            elementFolio.classList.toggle("mr-top-foliod-percent");
+            // elementSection.classList.toggle("mr-top-46-percent");
+            if (x == 0) {
+                elementMyIconny.classList.remove("fa-times");
+                elementMyIconny.classList.add("fa-bars");
+                x = 1;
+            } else {
+                elementMyIconny.classList.remove("fa-bars");
+                elementMyIconny.classList.add("fa-times");
+                x = 0;
+
+            }
+        }
+    </script>
+
 </body>
 
 </html>

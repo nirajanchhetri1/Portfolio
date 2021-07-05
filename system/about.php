@@ -1,8 +1,25 @@
 <?php
 require_once './AboutController.php';
+require_once './HomePageController.php';
+require_once 'BlogController.php';
+require_once './PortfolioController.php';
+require_once './SkillController.php';
+
+$blogCon = new BlogController();
+$blogs = $blogCon->getData('blogs');
+
+$c = new PortfolioController();
+$portfolio_data = $c->getData('portfolio');
+
+// $result = $c->all();
+
+$skillC = new SkillController();
+$skills = $skillC->getData('skills');
+
 
 $aboutC = new AboutController();
 $abouts = $aboutC->getData('about');
+
 ?>
 
 <!DOCTYPE html>
@@ -23,12 +40,16 @@ $abouts = $aboutC->getData('about');
       <div class="col-md-10">
         <div class="container-fluid">
           <div class="row welcome-row">
-            <div class="col-12">Welcome Nirajan Chhetri</div>
+            <div class="col-12">Welcome  <?= $h_data[0]->name; ?> </div>
           </div>
           <div class="row d-flex justify-content-around">
             <div class="col-md-4">
               <div class="dashboard-card yellow">
-                <p class="number">150</p>
+                <p class="number">
+                  <?php
+                  echo count($portfolio_data);
+                  ?>
+                </p>
                 <p class="stat-title">Portfolio</p>
                 <div class="overlay">
                 </div>
@@ -37,7 +58,9 @@ $abouts = $aboutC->getData('about');
             </div>
             <div class="col-md-4">
               <div class="dashboard-card blue">
-                <p class="number">150</p>
+                <p class="number"> <?php
+                                    echo count($blogs);
+                                    ?></p>
                 <p class="stat-title">My Blogs</p>
                 <div class="overlay">
                 </div>
@@ -46,7 +69,11 @@ $abouts = $aboutC->getData('about');
             </div>
             <div class="col-md-4">
               <div class="dashboard-card green">
-                <p class="number">150</p>
+                <p class="number">
+                  <?php
+                  echo count($skills);
+                  ?>
+                </p>
                 <p class="stat-title">My Skills</p>
                 <div class="overlay">
                 </div>

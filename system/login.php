@@ -21,19 +21,33 @@ if($_POST && $_POST['login']){
         box-sizing: border-box;
     }
 
-    .container{
-        width: 300px;
-        padding: 20px;
-        /* background: blue; */
-        margin-top: 15%;
-        border: 1px solid grey;
-        border-radius: 10px;
-    }
     .form{
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         justify-content: center;
+        position: absolute;
+        top: 50%;
+        left:50%;
+        transform:translate(-50%,-50%);
+        /* border: 2px solid #52add8; */
+        padding: 34px 44px;
+        border-radius: 12px;
+        box-shadow: 4px 8px 8px rgba(170, 170, 190, 0.8);
+    }
+
+    form input{
+        /* width: 12vw; */
+        outline: none;
+        border: none !important;
+    }
+    
+    form input.form-control{
+        border-bottom: 1px solid rgb(99, 203, 245) !important;
+    }
+
+    form input.form-control:focus{
+        border-bottom: 1px solid rgb(5, 131, 180) !important;
     }
 
     .form h4{
@@ -51,9 +65,11 @@ if($_POST && $_POST['login']){
 
     .form-group label{
         font-size: 18px;
-        color: grey;
+        color: rgb(0, 0, 0);
         font-family: sans-serif;
-        padding: 5px 0;
+        padding: 15px 0;
+        text-align: left;
+        margin-left: 0 !important;
     }
 
     .form-group input.form-control{
@@ -66,7 +82,7 @@ if($_POST && $_POST['login']){
     .btn{
         padding: 8px 20px;
         border-radius: 5px;
-        background: rgba(0, 0, 255, .8);
+        background: rgba(91, 91, 241, 0.8);
         outline: none;
         border: none;
         cursor: pointer;
@@ -81,14 +97,14 @@ if($_POST && $_POST['login']){
 <body>
     <div class="container">
         <form action="" method="POST" class="form">
-            <h4>Login</h4>
+            <h4>Portfolio Login</h4>
             <div class="form-group">
-                <label for="foremail">Email</label>
-                <input type="email" name="email" class="form-control">
+                <label for="foremail">Username/Email</label>
+                <input type="email" name="email" class="form-control" placeholder="Username or email">
             </div>
             <div class="form-group">
-                <label for="foremail">Email</label>
-                <input type="password" name="password" class="form-control">
+                <label for="foremail">Password</label>
+                <input type="password" name="password" class="form-control" placeholder="Password">
             </div>
 
             <input class="btn" type="submit" name="login" value="Login">

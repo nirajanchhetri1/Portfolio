@@ -26,6 +26,11 @@ table {
     width: 25% !important;
 }
 
+#present,#isRunning{
+    width: 25px !important;
+    margin-left:18px;
+}
+
 @media (max-width:767px) {
     .s-media {
         display: block;

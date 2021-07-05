@@ -1,5 +1,9 @@
 <?php
 require_once 'CvController.php';
+require_once './HomePageController.php';
+require_once 'BlogController.php';
+require_once './PortfolioController.php';
+require_once './SkillController.php';
 
 if (isset($_POST['submit'])  && $_POST['submit'] == 'Submit') {
 
@@ -9,6 +13,18 @@ if (isset($_POST['submit'])  && $_POST['submit'] == 'Submit') {
     header('location: cvs.php');
   }
 }
+
+$blogCon = new BlogController();
+$blogs = $blogCon->getData('blogs');
+
+$c = new PortfolioController();
+$portfolio_data = $c->getData('portfolio');
+
+// $result = $c->all();
+
+$skillC = new SkillController();
+$skills = $skillC->getData('skills');
+
 ?>
 
 <!DOCTYPE html>
@@ -31,12 +47,16 @@ if (isset($_POST['submit'])  && $_POST['submit'] == 'Submit') {
 
         <div class="container-fluid">
           <div class="row welcome-row">
-            <div class="col-12 h2">Welcome Nirajan Chhetri</div>
+            <div class="col-12 h2">Welcome <?= $h_data[0]->name; ?> </div>
           </div>
           <div class="row d-flex justify-content-around">
             <div class="col-md-4">
               <div class="dashboard-card yellow">
-                <p class="number">150</p>
+                <p class="number">
+                  <?php
+                  echo count($portfolio_data);
+                  ?>
+                </p>
                 <p class="stat-title">Portfolio</p>
                 <div class="overlay">
                 </div>
@@ -45,7 +65,9 @@ if (isset($_POST['submit'])  && $_POST['submit'] == 'Submit') {
             </div>
             <div class="col-md-4">
               <div class="dashboard-card blue">
-                <p class="number">150</p>
+                <p class="number"> <?php
+                                    echo count($blogs);
+                                    ?></p>
                 <p class="stat-title">My Blogs</p>
                 <div class="overlay">
                 </div>
@@ -54,7 +76,11 @@ if (isset($_POST['submit'])  && $_POST['submit'] == 'Submit') {
             </div>
             <div class="col-md-4">
               <div class="dashboard-card green">
-                <p class="number">150</p>
+                <p class="number">
+                  <?php
+                  echo count($skills);
+                  ?>
+                </p>
                 <p class="stat-title">My Skills</p>
                 <div class="overlay">
                 </div>

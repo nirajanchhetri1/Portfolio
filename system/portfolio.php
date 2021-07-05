@@ -1,10 +1,23 @@
 <?php
 
 require_once './PortfolioController.php';
+require_once './HomePageController.php';
+require_once 'BlogController.php';
+require_once './SkillController.php';
 
 $c = new PortfolioController();
 
 $result = $c->all();
+
+$blogCon = new BlogController();
+$blogs = $blogCon->getData('blogs');
+
+$portfolio_data = $c->getData('portfolio');
+
+// $result = $c->all();
+
+$skillC = new SkillController();
+$skills = $skillC->getData('skills');
 
 
 ?>
@@ -29,12 +42,16 @@ $result = $c->all();
                 <div class="container-fluid">
 
                     <div class="row welcome-row">
-                        <div class="col-12">Welcome Nirajan Chhetri</div>
+                        <div class="col-12">Welcome <?= $h_data[0]->name; ?> </div>
                     </div>
                     <div class="row d-flex justify-content-around">
                         <div class="col-md-4">
                             <div class="dashboard-card yellow">
-                                <p class="number">150</p>
+                                <p class="number">
+                                    <?php
+                                    echo count($portfolio_data);
+                                    ?>
+                                </p>
                                 <p class="stat-title">Portfolio</p>
                                 <div class="overlay">
                                 </div>
@@ -43,7 +60,9 @@ $result = $c->all();
                         </div>
                         <div class="col-md-4">
                             <div class="dashboard-card blue">
-                                <p class="number">150</p>
+                                <p class="number"> <?php
+                                                    echo count($blogs);
+                                                    ?></p>
                                 <p class="stat-title">My Blogs</p>
                                 <div class="overlay">
                                 </div>
@@ -52,7 +71,11 @@ $result = $c->all();
                         </div>
                         <div class="col-md-4">
                             <div class="dashboard-card green">
-                                <p class="number">150</p>
+                                <p class="number">
+                                    <?php
+                                    echo count($skills);
+                                    ?>
+                                </p>
                                 <p class="stat-title">My Skills</p>
                                 <div class="overlay">
                                 </div>

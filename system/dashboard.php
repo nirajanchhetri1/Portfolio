@@ -1,13 +1,33 @@
 <?php
 session_start();
 require_once './Db.php';
+require_once './HomePageController.php';
+require_once 'BlogController.php';
+require_once './PortfolioController.php';
+require_once './SkillController.php';
+
+
 if (!isset($_SESSION['logedin']) && $_SESSION['logedin'] == false) {
     header('location: login.php');
 }
 $db = new Db();
 
+$blogCon = new BlogController();
+$blogs = $blogCon->getData('blogs');
+
+$c = new PortfolioController();
+$portfolio_data = $c->getData('portfolio');
+
+// $result = $c->all();
+
+$skillC = new SkillController();
+$skills = $skillC->getData('skills');
+
+
 $result = $db->getData('home_page');
 
+$homeData = new HomePageController();
+$h_data = $homeData->getData('home_page');
 
 ?>
 
@@ -29,18 +49,30 @@ $result = $db->getData('home_page');
 
     <div class="container-fluid">
         <div class="row">
-           <?php require_once './nav_bar.php'; ?>
-               
+            <?php require_once './nav_bar.php'; ?>
+
             <div class="col-md-10">
 
                 <div class="container-fluid">
                     <div class="row welcome-row">
-                        <div class="col-12">Welcome Nirajan Chhetri</div>
+                        <div class="col-12">
+                        <?php
+      if (isset($h_data[0]->name)) {
+      ?>
+                        Welcome <?= $h_data[0]->name; ?>
+                        <?php } else { ?>
+                        Welcome to Respected User !!!!
+                        <?php } ?>
+                        </div>
                     </div>
                     <div class="row d-flex justify-content-around">
                         <div class="col-md-4">
                             <div class="dashboard-card yellow">
-                                <p class="number">150</p>
+                                <p class="number">
+                                    <?php
+                                    echo count($portfolio_data);
+                                    ?>
+                                </p>
                                 <p class="stat-title">Portfolio</p>
                                 <div class="overlay">
                                 </div>
@@ -49,7 +81,9 @@ $result = $db->getData('home_page');
                         </div>
                         <div class="col-md-4">
                             <div class="dashboard-card blue">
-                                <p class="number">150</p>
+                                <p class="number"> <?php
+                                                    echo count($blogs);
+                                                    ?></p>
                                 <p class="stat-title">My Blogs</p>
                                 <div class="overlay">
                                 </div>
@@ -58,7 +92,11 @@ $result = $db->getData('home_page');
                         </div>
                         <div class="col-md-4">
                             <div class="dashboard-card green">
-                                <p class="number">150</p>
+                                <p class="number">
+                                    <?php
+                                    echo count($skills);
+                                    ?>
+                                </p>
                                 <p class="stat-title">My Skills</p>
                                 <div class="overlay">
                                 </div>
@@ -69,11 +107,18 @@ $result = $db->getData('home_page');
 
                     <div class="row">
                         <div class="col-12">
-                            <!-- if first time profile creation -->
-                            <a class="btn green text-white mx-2 my-5" href="home_page.php">Get started with your Profile</a>
 
-                            <!-- if second or later time profile creation -->
-                            <a class="btn green text-white mx-2 my-5" href="home_page.php">Add new Profile</a>
+                            <?php
+                            if (isset($result->id)) {
+                            ?>
+
+                                <a class="btn green text-white mx-2 my-5" href="home_page.php">Add new Profile</a>
+                                <!-- if first time profile creation -->
+                            <?php } else { ?>
+                                <!-- if second or later time profile creation -->
+                                <a class="btn green text-white mx-2 my-5" href="home_page.php">Get started with your Profile</a>
+
+                            <?php } ?>
                         </div>
                     </div>
 

@@ -16,16 +16,17 @@ $blogs = $blogc->getData('blogs');
     <link rel="stylesheet" href="assets/css/blog.css">
     <link rel="stylesheet" href="assets/css/nav.css">
     <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
     <link rel="icon" href="assets/img/folio-logo.png" type="image/png" sizes="32x32">
-    
+
 
 </head>
 
 <body style="background:#F6F6F6;">
     <?php require_once 'nav_bar.php'; ?>
 
-    <div class="my-blogs">
+    <div id="blog_id" class="my-blogs">
         <p>
             My &nbsp;<span class="orange-text">blogs</span>
         </p>
@@ -167,6 +168,28 @@ $blogs = $blogc->getData('blogs');
 
     </div>
 
+    <script>
+        var x = 0;
+
+        function showNavList() {
+            var element = document.getElementById("my-ul");
+            var elementMyIconny = document.getElementById("my-iconny");
+            var elementBlog = document.getElementById("blog_id");
+            element.classList.toggle("nav-right-list-ul");
+            elementBlog.classList.toggle("mr-top-blog-percent");
+            // elementSection.classList.toggle("mr-top-46-percent");
+            if (x == 0) {
+                elementMyIconny.classList.remove("fa-times");
+                elementMyIconny.classList.add("fa-bars");
+                x = 1;
+            } else {
+                elementMyIconny.classList.remove("fa-bars");
+                elementMyIconny.classList.add("fa-times");
+                x = 0;
+
+            }
+        }
+    </script>
 
 </body>
 

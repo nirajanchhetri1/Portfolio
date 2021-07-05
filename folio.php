@@ -19,6 +19,7 @@ $result = $portfolio->all();
     <link rel="stylesheet" href="assets/css/folio.css">
     <link rel="stylesheet" href="assets/css/nav.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
     <link rel="icon" href="assets/img/folio-logo.png" type="image/png" sizes="32x32">
 
@@ -27,7 +28,7 @@ $result = $portfolio->all();
 <body style="background:#F6F6F6;">
     <?php require_once 'nav_bar.php'; ?>
 
-    <section id="card">
+    <section id="card" style="margin-top:100px;">
         <div class="center">
 
             <p>
@@ -49,6 +50,7 @@ $result = $portfolio->all();
             </div>
         </div>
     </section>
+
     <section id="folio-card">
 
 
@@ -66,36 +68,30 @@ $result = $portfolio->all();
             ?>
         </div>
 
-
-
-
-        <!-- <div class="folio-cards">
-                <a href="#">
-                    <div class="folio-image">
-                        <img src="./assets/img/folio.jpg" alt="" class="src">
-                    </div>
-                </a>
-
-                <a href="#">
-                    <div class="folio-image">
-                        <img src="./assets/img/folio.jpg" alt="" class="src">
-
-
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="folio-image">
-                        <img src="./assets/img/folio.jpg" alt="" class="src">
-                    </div>
-                </a>
-
-
-            </div> -->
-
-
     </section>
 
+    <script>
+        var x = 0;
 
+        function showNavList() {
+            var element = document.getElementById("my-ul");
+            var elementMyIconny = document.getElementById("my-iconny");
+            var elementFolio = document.getElementById("card");
+            element.classList.toggle("nav-right-list-ul");
+            elementFolio.classList.toggle("mr-top-folio-percent");
+            // elementSection.classList.toggle("mr-top-46-percent");
+            if (x == 0) {
+                elementMyIconny.classList.remove("fa-times");
+                elementMyIconny.classList.add("fa-bars");
+                x = 1;
+            } else {
+                elementMyIconny.classList.remove("fa-bars");
+                elementMyIconny.classList.add("fa-times");
+                x = 0;
+
+            }
+        }
+    </script>
 
 </body>
 

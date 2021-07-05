@@ -29,7 +29,7 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
     <?php require_once 'nav_bar.php'; ?>
 
 
-    <div class="blog-details">
+    <div id="bd_id" class="blog-details">
         <p>
             My &nbsp;<span class="orange-text">blogs</span>
         </p>
@@ -73,6 +73,30 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
     <?php
     }
     ?>
+
+
+<script>
+        var x = 0;
+
+        function showNavList() {
+            var element = document.getElementById("my-ul");
+            var elementMyIconny = document.getElementById("my-iconny");
+            var elementBd = document.getElementById("bd_id");
+            element.classList.toggle("nav-right-list-ul");
+            elementBd.classList.toggle("mr-top-Bd-percent");
+            // elementSection.classList.toggle("mr-top-46-percent");
+            if (x == 0) {
+                elementMyIconny.classList.remove("fa-times");
+                elementMyIconny.classList.add("fa-bars");
+                x = 1;
+            } else {
+                elementMyIconny.classList.remove("fa-bars");
+                elementMyIconny.classList.add("fa-times");
+                x = 0;
+
+            }
+        }
+    </script>
 
 </body>
 
