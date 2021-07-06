@@ -179,7 +179,7 @@ $skills = $skillC->getData('skills');
                                             <tr>
                                                 <td class="my-bold">Status</td>
                                                 <td>
-                                                    <input type="checkbox" value="active" name="status" <?= isset($selectedData) && $selectedData->status == 'active' ? 'checked' : '' ?>> Active
+                                                    <input class="form-check-input my-checkbox" type="checkbox" value="active" name="status" <?= isset($selectedData) && $selectedData->status == 'active' ? 'checked' : '' ?>> Active
                                                 </td>
                                             </tr>
                                             <tr>

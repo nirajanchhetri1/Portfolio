@@ -26,7 +26,7 @@ table {
     width: 25% !important;
 }
 
-#present,#isRunning{
+#present,#isRunning,.my-checkbox{
     width: 25px !important;
     margin-left:18px;
 }
