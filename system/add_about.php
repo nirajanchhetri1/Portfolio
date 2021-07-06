@@ -53,7 +53,15 @@ $skills = $skillC->getData('skills');
 
                 <div class="container-fluid">
                     <div class="row welcome-row">
-                        <div class="col-12 h2">Welcome  <?= $h_data[0]->name; ?> </div>
+                        <div class="col-12 h2">
+                            <?php
+                            if (isset($h_data) && isset($h_data->name)) {
+                            ?>
+                                Welcome <?= $h_data->name; ?>
+                            <?php } else { ?>
+                                Welcome to Respected User !!!!
+                            <?php } ?>
+                        </div>
                     </div>
                     <div class="row d-flex justify-content-around">
                         <div class="col-md-4">

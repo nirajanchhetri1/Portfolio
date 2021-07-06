@@ -33,7 +33,7 @@ $skills = $skillC->getData('skills');
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Dashboard | Experience</title>
 </head>
 
 <body>
@@ -44,7 +44,15 @@ $skills = $skillC->getData('skills');
       <div class="col-md-10">
         <div class="container-fluid">
           <div class="row welcome-row">
-            <div class="col-12">Welcome <?= isset($h_data[0]) ? $h_data[0]->name : ''; ?> </div>
+            <div class="col-12">
+              <?php
+              if (isset($h_data) && isset($h_data->name)) {
+              ?>
+                Welcome <?= $h_data->name; ?>
+              <?php } else { ?>
+                Welcome to Respected User !!!!
+              <?php } ?>
+            </div>
           </div>
           <div class="row d-flex justify-content-around">
             <div class="col-md-4">
