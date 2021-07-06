@@ -7,15 +7,16 @@ $db = new Db();
 $cvC = new CvController();
 $cv = $cvC->getCv();
 
-$result = $db->getData('home_page', null, null, 1);
+$result = $db->getWhereData('home_page', ['status' => 'active'], [], true);
 
 $data = array();
-foreach ($result as $newData) {
+
+if (isset($result)) {
     $data = [
-        'name' => $newData->name,
-        'profession' => $newData->profession,
-        'detail' => $newData->detail,
-        'image' => $newData->image
+        'name' => $result->name,
+        'profession' => $result->profession,
+        'detail' => $result->detail,
+        'image' => $result->image
     ];
 }
 
@@ -23,7 +24,7 @@ foreach ($result as $newData) {
 $cookie_name = "data";
 // die;
 
-$cookie_value = isset($data['profession']) ? $data["profession"]:'';
+$cookie_value = isset($data['profession']) ? $data["profession"] : '';
 // Set cookie
 setcookie($cookie_name, $cookie_value);
 // if (!isset($_COOKIES[$cookie_name])) {

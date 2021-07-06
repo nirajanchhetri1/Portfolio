@@ -4,7 +4,6 @@ require_once 'Db.php';
 
 class ExperienceController extends Db
 {
-
   public function saveData()
   {
     $position = $_POST['position'];
@@ -13,7 +12,7 @@ class ExperienceController extends Db
     $end_date = $_POST['end_date'];
     $description = $_POST['description'];
     $company_url = $_POST['company_url'];
-    $present = $_POST['present'];
+    $present = isset($_POST['present']) ? 1 : 0;
 
     $data = [
       'position' => $position,
@@ -24,6 +23,7 @@ class ExperienceController extends Db
       'company_url' => $company_url,
       'present' => $present,
     ];
+
 
     return $this->create('experiences', $data);
   }

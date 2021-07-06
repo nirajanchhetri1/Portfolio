@@ -10,7 +10,7 @@ require_once './SkillController.php';
 if (!isset($_SESSION['logedin']) && $_SESSION['logedin'] == false) {
     header('location: login.php');
 }
-$db = new Db();
+// $db = new Db();
 
 $blogCon = new BlogController();
 $blogs = $blogCon->getData('blogs');
@@ -24,11 +24,12 @@ $skillC = new SkillController();
 $skills = $skillC->getData('skills');
 
 
-$result = $db->getData('home_page');
-
 $homeData = new HomePageController();
-$h_data = $homeData->getData('home_page');
+$result = $homeData->getData('home_page');
 
+// $h_data = $homeData->getWhereData('home_page', ['status' => 'active'], [], true);
+// print_r($h_data->name);
+// die;
 ?>
 
 
@@ -56,13 +57,13 @@ $h_data = $homeData->getData('home_page');
                 <div class="container-fluid">
                     <div class="row welcome-row">
                         <div class="col-12">
-                        <?php
-      if (isset($h_data[0]->name)) {
-      ?>
-                        Welcome <?= $h_data[0]->name; ?>
-                        <?php } else { ?>
-                        Welcome to Respected User !!!!
-                        <?php } ?>
+                            <?php
+                            if (isset($h_data) && isset($h_data->name)) {
+                            ?>
+                                Welcome <?= $h_data->name; ?>
+                            <?php } else { ?>
+                                Welcome to Respected User !!!!
+                            <?php } ?>
                         </div>
                     </div>
                     <div class="row d-flex justify-content-around">
@@ -140,7 +141,7 @@ $h_data = $homeData->getData('home_page');
                                         <td><?= $data->name ?></td>
                                         <td><?= $data->profession ?></td>
                                         <td><?= substr($data->detail, 0, 8) ?></td>
-                                        <td><input type="checkbox" name="" id=""></td>
+                                        <td><input type="checkbox" name="" id="" <?= $data->status == 'active' ? 'checked' : '' ?>></td>
                                         <td>
                                             <a href="edit_home.php?id=<?= $data->id ?>"><i class="fas fa-edit"></i></a>
                                             <a href="edit_home.php?id=<?= $data->id ?>"><i class="fas fa-trash-alt"></i></a>

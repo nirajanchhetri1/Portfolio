@@ -53,7 +53,15 @@ $skills = $skillC->getData('skills');
 
                 <div class="container-fluid">
                     <div class="row welcome-row">
-                        <div class="col-12 h2">Welcome <?= $h_data[0]->name; ?> </div>
+                        <div class="col-12 h2">
+                            <?php
+                            if (isset($h_data) && isset($h_data->name)) {
+                            ?>
+                                Welcome <?= $h_data->name; ?>
+                            <?php } else { ?>
+                                Welcome to Respected User !!!!
+                            <?php } ?>
+                        </div>
                     </div>
                     <div class="row d-flex justify-content-around">
                         <div class="col-md-4">
@@ -193,6 +201,12 @@ $skills = $skillC->getData('skills');
                                                     <input type="text" name="git" id="git" class="form-control my-3 mx-3" placeholder="Your Github Username" aria-label="Your GitHub Username">
                                                     <!-- <input type="text" name="giturl" id="giturl" class="form-control my-3 mx-3 s-media" placeholder="Your Github Url" aria-label="Your Youtube Url"> -->
                                                     <!-- <input type="text" name="git" id="git" /> -->
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="my-bold">Status</td>
+                                                <td>
+                                                    <input type="checkbox" value="active" name="status"> Active
                                                 </td>
                                             </tr>
                                             <tr>

@@ -5,7 +5,7 @@ require_once './PortfolioController.php';
 require_once './SkillController.php';
 
 $homeData = new HomePageController();
-$h_data = $homeData->getData('home_page');
+$h_data = $homeData->getWhereData('home_page', ['status' => 'active'], [], true);
 
 // echo $h_data[0]->image;
 // print_r ($h_data);
@@ -26,9 +26,9 @@ $h_data = $homeData->getData('home_page');
     <div class="col-12">
 
       <?php
-      if (isset($h_data[0]->image)) {
+      if (isset($h_data->image)) {
       ?>
-        <img src="../images/<?= $h_data[0]->image; ?>" alt="" width="44" srcset=""> <?= $h_data[0]->name; ?>
+        <img src="../images/<?= $h_data->image; ?>" alt="" width="44" srcset=""> <?= $h_data->name; ?>
     </div>
   <?php } else { ?>
     <img src="" alt="" width="44" srcset=""> User Avatar | User Name

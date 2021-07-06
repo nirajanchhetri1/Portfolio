@@ -18,8 +18,9 @@ class HomePageController extends Db
         $twitter = $_POST['twitter'];
         $youtube = $_POST['youtube'];
         $git = $_POST['git'];
+        $status = isset($_POST['status']) ? 'active' : 'inactive';
 
-        $data = ['name' => $name, 'profession' => $profession, 'detail' => $detail, 'status' => 'active'];
+        $data = ['name' => $name, 'profession' => $profession, 'detail' => $detail, 'status' => $status];
 
         $data['contact'] = isset($contact) && !empty($contact) ? $contact : null;
         $data['email'] = isset($email) && !empty($email) ? $email : null;
@@ -34,9 +35,16 @@ class HomePageController extends Db
             $image = $this->uploadImage();
             $data['image'] = $image;
         }
-        
 
-        return  $this->create('home_page', $data);
+
+        $result = $this->create('home_page', $data);
+        if ($result) {
+            if ($result->status == 'active') {
+                $q = "UPDATE home_page SET status = :status WHERE id <> :id";
+                $this->query($q, ['status' => 'inactive', 'id' => $result->id]);
+            }
+        }
+        return $result;
     }
 
 
@@ -54,11 +62,13 @@ class HomePageController extends Db
         $twitter = $_POST['twitter'];
         $youtube = $_POST['youtube'];
         $git = $_POST['git'];
-        $id=$_POST['id'];
+        $id = $_POST['id'];
+        $status = isset($_POST['status']) ? 'active' : 'inactive';
 
-        $sql = 'UPDATE home_page SET name = :name, profession = :profession, detail = :detail';
 
-        $udata = ['name' => $name, 'profession' => $profession, 'detail' => $detail];
+        $sql = 'UPDATE home_page SET name = :name, profession = :profession, detail = :detail, status = :status';
+
+        $udata = ['name' => $name, 'profession' => $profession, 'detail' => $detail, 'status' => $status];
 
         if (isset($contact) && !empty($contact)) {
             $sql .= ", contact = :contact";
@@ -131,9 +141,15 @@ class HomePageController extends Db
         }
 
         $sql .= '  WHERE id = :id';
-        $udata['id']=$id;
+        $udata['id'] = $id;
 
         $updated = $this->query($sql, $udata);
+
+        if ($status == 'active') {
+            $q = "UPDATE home_page SET status = :status WHERE id <> :id";
+            $this->query($q, ['status' => 'inactive', 'id' => $id]);
+        }
+
 
         if ($updated == true) {
             header('location: dashboard.php');

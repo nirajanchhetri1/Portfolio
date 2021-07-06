@@ -44,7 +44,7 @@ $skills = $skillC->getData('skills');
       <div class="col-md-10">
         <div class="container-fluid">
           <div class="row welcome-row">
-            <div class="col-12">Welcome <?= $h_data[0]->name; ?> </div>
+            <div class="col-12">Welcome <?= isset($h_data[0]) ? $h_data[0]->name : ''; ?> </div>
           </div>
           <div class="row d-flex justify-content-around">
             <div class="col-md-4">

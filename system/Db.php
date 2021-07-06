@@ -20,10 +20,13 @@ class Db
     return $pdo;
   }
 
-  public function query($sql, $data, $fetch = false, $single = false)
+  public function query($sql, $data = null, $fetch = false, $single = false)
   {
     $stmt = $this->conn->prepare($sql);
-    $result = $stmt->execute($data);
+    if (!isset($data))
+      $result = $stmt->execute();
+    else
+      $result = $stmt->execute($data);
 
     if ($fetch)
       return isset($single) ? $this->fetchSingle($result) : $this->fetchAll($result);
@@ -59,11 +62,11 @@ class Db
 
     $sql .= ' ORDER BY id desc';
 
-    
+
     if (isset($limit)) {
       $sql .= " LIMIT $limit";
     }
-    
+
     if (isset($id)) {
       $executedQuery = $this->executeQuery($sql, ['id' => $id]);
     } else {
